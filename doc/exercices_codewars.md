@@ -24,7 +24,7 @@
 - [Exercice 11 si pair alors \* 8](#exercice-11-si-pair-alors--8)
 - [Exercice 12 Quick fast](#exercice-12-quick-fast)
 - [Exercice 13 Mission impossible](#exercice-13-mission-impossible)
-- [Exercice 13 Foreach Moutons](#exercice-14-foreach-moutons)
+- [Exercice 14 Foreach Moutons](#exercice-14-foreach-moutons)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -634,6 +634,98 @@ public class Main {
         int result = Counter.countSheeps(sheeps);
         System.out.println("Nombre de moutons présents : " + result); // Devrait afficher 6
     }
+}
+```
+
+## Exercice 15, les fameux amis à 4 lettres
+
+Créez un programme qui **filtre une liste de chaînes** et **renvoie une liste contenant uniquement le nom de vos amis**.
+
+- Si un nom contient exactement **4 lettres**, vous pouvez être sûr qu'il s'agit d'un de vos **amis** !
+
+- Sinon, vous pouvez être sûr qu'il ne s'agit pas...
+
+```java
+Input = ["Ryan", "Kieran", "Jason", "Yous"]
+Output = ["Ryan", "Yous"]**
+
+Input = ["Peter", "Stephen", "Joe"]
+Output = []**
+```
+
+- Les chaînes d'entrée ne contiendront que des lettres.
+
+Remarque : conservez l'ordre d'origine des noms dans la sortie.
+
+### Ce que l'énoncé demande :
+
+- Vous avez une liste de chaînes (des noms).
+- Vous devez filtrer cette liste pour ne garder que les noms qui contiennent exactement 4 lettres.
+- Vous devez conserver l'ordre d'origine dans la liste filtrée.
+- Si aucun nom ne correspond, la liste de sortie sera vide.
+
+### Découpage en étapes simples :
+
+- Parcourir la liste des noms donnée en entrée.
+- Vérifier pour chaque nom si sa longueur est égale à 4.
+- Ajouter les noms qui respectent cette condition dans une nouvelle liste.
+- Retourner la liste contenant uniquement les noms valides.
+
+## Code :
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Kata {
+    public static List<String> friend(List<String> x) {
+        // Liste pour stocker les noms filtrés
+        List<String> friends = new ArrayList<>();
+
+        // Parcourir chaque nom dans la liste d'entrée
+        for (String name : x) {
+            // Vérifier si le nom contient exactement 4 lettres
+            if (name.length() == 4) {
+                friends.add(name); // Ajouter le nom à la liste filtrée
+            }
+        }
+
+        // Retourner la liste contenant uniquement les noms valides
+        return friends;
+    }
+}
+```
+
+## Exercice 16
+
+Les distributeurs automatiques de billets autorisent les codes PIN à 4 ou 6 chiffres et les codes PIN ne peuvent contenir que 4 ou 6 chiffres exactement .
+
+Si une chaîne PIN valide est transmise à la fonction, renvoyez true, sinon renvoyez false.
+
+### Étapes de validation :
+
+Vérifier si la longueur de la chaîne est exactement 4 ou 6.
+Vérifier si tous les caractères de la chaîne sont des chiffres.
+
+```java
+public class Solution {
+
+  public static boolean validatePin(String pin) {
+    // Vérifier si la longueur est 4 ou 6
+    if (pin.length() != 4 && pin.length() != 6) {
+      return false;
+    }
+
+    // Vérifier si tous les caractères sont des chiffres
+    for (char character_verification : pin.toCharArray()) {
+      if (!Character.isDigit(character_verification)) {
+        return false;
+      }
+    }
+
+    // Si toutes les vérifications passent, retourner true
+    return true;
+  }
 }
 ```
 
