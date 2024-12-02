@@ -28,6 +28,16 @@ En Java, l’opérateur modulo (%) renvoie le reste d’une division entière. S
 Méthode Java String replace()
 La méthode Java String replace () est utilisée pour remplacer un caractère spécifié par le caractère donné, tous deux passés en tant que paramètres. Cette méthode convient pour remplacer n'importe quel caractère d'une chaîne par un autre caractère de votre choix.
 
+## CONVERTIR UN INTEGER EN CHAINE DE CARACTERE
+
+```
+Integer.toString
+```
+
+## Utilisation de StringBuilder :
+
+Plus performant que la concaténation directe de chaînes dans une boucle.
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">

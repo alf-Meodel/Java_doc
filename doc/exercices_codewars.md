@@ -18,6 +18,11 @@
 - [Exercice 6 Supprimer les points d'exclamation avec REPLACE](#exercice-6-supprimer-tout-les-points-dexclamation-avec-replace)
 - [Exercice 7 Une aiguille dans une botte de foin avec FOR](#exercice-7-une-aiguille-dans-une-botte-de-foin-avec-findneedle)
 - [Exercice 8 Pierre feuille papier ciseaux ](#exercice-8-pierre-feuille-papier--ifs)
+- [Exercice 9 ](#exe)
+- [Exercice 10 ](#exercice-11-si-pair-alors--8)
+- [Exercice 11 ](#exercice-11-si-pair-alors--8)
+- [Exercice 12 ](#exercice-12-quick-fast)
+- [Exercice 13 ](#exercice-13)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -342,6 +347,141 @@ public class Kata {
   }
 }
 ```
+
+## Exercice 10 hydratation litre d'eau
+
+- Nathan adore faire du vélo.
+
+Parce que Nathan sait qu’il est important de rester hydraté, il boit 0,5 litre d’eau par heure de vélo.
+
+On vous donne le temps en heures et vous devez renvoyer le nombre de litres que Nathan boira, arrondi à la plus petite valeur.
+
+### Traduction en code :
+
+0,5 for one hour ( 60 minutes)
+
+##### Comprendre les règles :
+
+Nathan boit **0,5 litre d'eau par heure de vélo**.
+Le temps passé à faire du vélo est donné en heures (time).
+Le résultat doit être arrondi à la plus petite valeur **(fonction floor en mathématiques).**
+
+##### Entrée :
+
+Une valeur numérique représentant le temps passé en heures (peut être décimal).
+
+##### Sortie :
+
+Un entier représentant le nombre de litres d'eau que Nathan boira.
+
+#### Plan pour écrire le code :
+
+Multipliez le temps (time) par 0,5 pour calculer les litres.
+Utilisez la fonction Math.floor() pour arrondir à la plus petite valeur.
+Retournez le résultat en entier.
+
+```
+public class KeepHydrated {
+    // Méthode pour calculer la quantité d'eau que nathan va boire
+    public static int Liters(double time) {
+        //Nous multiplions par 0,5 en arrondissant
+      //Le (int) entre parenthèses est une conversion explicite (appelée aussi cast en Java).
+      //Cela signifie que nous transformons une valeur d'un type (ici double en int).
+        return (int) Math.floor(time * 0.5);
+    }
+}
+```
+
+## Exercice 11 si pair alors \* 8
+
+Ce kata consiste à multiplier un nombre donné par huit s'il s'agit d'un nombre pair et par neuf sinon.
+
+- Méthode pour traduire en code :
+
+- Nous allons déterminer dans un if si le nombre est pair ou imparaire
+- Puis nous allons le multiplier par huit si il est pair
+
+```
+public class Sid {
+    public static int simpleMultiplication(int n) {
+      // Condition en ternaire
+      //(condition) ? valeur_si_vrai : sinon valeur_si_faux;
+           return (n % 2 == 0) ? n * 8 : n * 9;
+    }
+}
+```
+
+## Exercice 12 quick fast
+
+Codez aussi vite que vous le pouvez ! Vous devez doubler l'entier et le renvoyer.
+
+```
+class Java {
+  public static int doubleInteger(int i) {
+   i = i *2;
+    return i;
+  }
+}
+```
+
+## Exercice 13
+
+Bienvenue. Dans ce kata, on vous demande de mettre au carré chaque chiffre d'un nombre et de les concaténer.
+
+Par exemple, si nous exécutons 9119 via la fonction, nous obtiendrons 811181, car 9 2 est 81 et 1 2 est 1. (81-1-1-81)
+
+Exemple n°2 : une entrée de 765 renverra/devra renvoyer 493 625 car 7 2 est 49, 6 2 est 36 et 5 2 est 25. (49-36-25)
+
+Remarque : la fonction accepte un entier et renvoie un entier.
+
+#### Traduire le problème
+
+**Entrée :** Un entier n (par exemple, 9119).
+
+**Processus :**
+Convertir l'entier en une chaîne pour traiter chaque chiffre séparément.
+Mettre au carré chaque chiffre.
+Concaténer les carrés en une nouvelle chaîne.
+Convertir cette chaîne en entier.
+
+**Sortie :** Un entier résultant de la concaténation des carrés des chiffres.
+
+```
+public class SquareDigit {
+
+    // Méthode qui prend un entier `n` en entrée, par exemple 9119
+    public static int squareDigits(int n) {
+        // Convertir l'entier en chaîne de caractères pour accéder à chaque chiffre individuellement
+        // Exemple : Si n = 9119, alors number = "9119"
+        String number = Integer.toString(n);
+
+        // Utilisation de StringBuilder pour construire efficacement une nouvelle chaîne
+        // qui contiendra les carrés de chaque chiffre concaténés
+        StringBuilder result = new StringBuilder();
+
+        // Parcourir chaque caractère de la chaîne `number`
+        for (char c : number.toCharArray()) {
+            // Convertir le caractère en entier
+            // Exemple : '9' devient 9
+            int digit = Character.getNumericValue(c);
+
+            // Calculer le carré du chiffre et l'ajouter à la chaîne result
+            // Exemple : si digit = 9, alors digit * digit = 81, et "81" est ajouté à result
+            result.append(digit * digit);
+        }
+
+        // Convertir la chaîne résultante (contenant les carrés concaténés) en entier
+        // Exemple : si result = "811181", alors Integer.parseInt("811181") retourne 811181
+        return Integer.parseInt(result.toString());
+    }
+}
+```
+
+### Exercice 14
+
+Implémenter une fonction qui convertit la valeur booléenne donnée en sa représentation sous forme de chaîne.
+
+Remarque : seules les entrées valides seront fournies.
 
 ![border](../assets/line/line-pink-point_l.png)
 
