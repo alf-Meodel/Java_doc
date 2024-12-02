@@ -38,7 +38,7 @@ Le point d'entrée de tout programme Java. C'est là que l'exécution commence.
 
 ## Exemple :
 
-```
+```java
 public class Exemple {
     public static void main(String[] args) {
         System.out.println("Bonjour, monde!");
@@ -70,7 +70,7 @@ C'est la méthode principale où l'exécution du programme commence.
 
 Une classe est une structure qui contient des données (attributs) et des méthodes. Elle agit comme un plan pour créer des objets.
 
-```
+```java
 public class Voiture {
     // Attributs (propriétés de la classe)
     String marque;
