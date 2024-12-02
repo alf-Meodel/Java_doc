@@ -1,4 +1,4 @@
-# JAVA Doc
+# JAVA Documentation
 
 <!-- Main image  -->
 
@@ -16,7 +16,7 @@
 - [JAVA Cheat sheet](./doc/java_cheatsheet.md)
 - [Benchmark JAVA/NEST](./doc/benchmark.md)
 
-![border](./assets/line/border_deco_rB.png)
+![border](./assets/line/border_deco_rb.png)
 
 # Introduction au Java
 
