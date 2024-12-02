@@ -280,6 +280,69 @@ public class Kata {
 }
 ```
 
+## Exercice 9 Location voiture réductions
+
+### Enoncé
+
+Après un trimestre difficile au bureau, vous décidez de prendre des vacances pour vous reposer.
+
+- Vous réservez donc un vol pour vous et votre petite amie et essayez de laisser tout ce désordre derrière vous.
+
+- Pour vous déplacer pendant vos vacances, vous aurez besoin d'une voiture de location. Le responsable de la location de voiture vous fera de bonnes offres.
+
+---
+
+- Chaque jour de location de voiture coûte **40 $** .
+- Si nous louons une voiture pendant 7 jours ou plus, nous bénéficions d'une réduction de **50 $** sur le total.
+- Par ailleurs, si nous louons une voiture pendant 3 jours ou plus, nous bénéficions d'une réduction de **20 $** sur le total.
+
+- **Objectif :** Écrire un code qui donne **le montant total pour différents jours (d).**
+
+---
+
+### Explications du code :
+
+**d = nombre de jours**
+
+- Calcul du coût total de base :
+
+- **Dans un premier temps nous allons multiplier le nombre de jours d par 40** pour obtenir le coût de base.
+
+- **Puis nous allons appliquer les réductions** :
+
+  - Si **d >= 7**, nosu appliquons une réduction de 50 $.
+  - Sinon, **si d >= 3**, appliquez une réduction de 20 $.
+
+    **L'utilisation de else if garantit que seule la réduction la plus avantageuse est appliquée.**
+
+- Retourner le montant total :
+
+- Une fois les réductions appliquées, nous affichons le coût total.
+
+### Code final :
+
+```
+public class Kata {
+  public static int rentalCarCost(int d) {
+//     d = nombre de jours
+
+   int total =  d * 40;
+
+     //Appliquer les reductions
+
+     if ( d >= 7){
+       total -= 50;
+     }else if (d >= 3){
+       total -= 20;
+     }
+
+    return total;
+
+
+  }
+}
+```
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">
