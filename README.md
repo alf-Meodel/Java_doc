@@ -13,7 +13,8 @@
 # Navigation
 
 - [Exercices CodeWars](./doc/exercices_codewars.md)
-- [JAVA Tools](./doc/java_tools.md)
+- [JAVA Cheat sheet](./doc/java_cheatsheet.md)
+- [Benchmark JAVA/NEST](./doc/benchmark.md)
 
 ![border](./assets/line/border_deco_rB.png)
 
