@@ -18,11 +18,11 @@
 - [Exercice 6 Supprimer les points d'exclamation avec REPLACE](#exercice-6-supprimer-tout-les-points-dexclamation-avec-replace)
 - [Exercice 7 Une aiguille dans une botte de foin avec FOR](#exercice-7-une-aiguille-dans-une-botte-de-foin-avec-findneedle)
 - [Exercice 8 Pierre feuille papier ciseaux ](#exercice-8-pierre-feuille-papier--ifs)
-- [Exercice 9 ](#exe)
-- [Exercice 10 ](#exercice-11-si-pair-alors--8)
-- [Exercice 11 ](#exercice-11-si-pair-alors--8)
-- [Exercice 12 ](#exercice-12-quick-fast)
-- [Exercice 13 ](#exercice-13)
+- [Exercice 9 location voiture réductions](#exercice-9-location-voiture-réductions)
+- [Exercice 10 hydratation litre d'eau](#exercice-10-hydratation-litre-deau)
+- [Exercice 11 si pair alors \* 8](#exercice-11-si-pair-alors--8)
+- [Exercice 12 Quick fast](#exercice-12-quick-fast)
+- [Exercice 13 Mission impossible](#exercice-13-mission-impossible)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -34,7 +34,7 @@
 
 Creation d'un tableau à partir d'une methode smash
 
-```
+```JAVA
 public class SmashWords {
 
     public static String smash(String... words) {
@@ -59,13 +59,13 @@ public class SmashWords {
 
 - La variable word est déclarée de la manière suivante pour définir un tableau ou une chaine de caractères:
 
-```
+```JAVA
 public static String smash(String... words)
 ```
 
 - Si nous déclarions une simple variable voila à quoi aurait ressemblé
 
-```
+```JAVA
 public static String smash(String word) { ... }
 smash("hello");
 ```
@@ -106,7 +106,7 @@ Sinon, si (flower1 % 2 != 0) et (flower2 % 2 == 0), ils le sont aussi.
 
 ### Resolution
 
-```
+```JAVA
 public class OppositesAttract {
 
   public static boolean isLove(final int flower1, final int flower2) {
@@ -133,7 +133,7 @@ Votre tâche consiste à calculer le nombre de pages vierges dont vous avez beso
 
 ### Code :
 
-```
+```JAVA
 public class Paper
 {
   public static int paperWork(int n, int m)
@@ -152,9 +152,9 @@ public class Paper
 
 Complétez la méthode qui prend une valeur booléenne et renvoie une "Yes"chaîne pour true, ou une "No"chaîne pour false.
 
-### code de base
+### code de base
 
-```
+```JAVA
 class YesOrNo {
     public static String boolToWord(boolean b) {
         if (b) {
@@ -178,7 +178,7 @@ Votre tâche consiste à écrire une fonction qui renvoie le temps écoulé depu
 
 - Pour résoudre cet exercice, nous devons convertir les heures, minutes et secondes en millisecondes et retourner le résultat. Voici une solution simple et claire :
 
-```
+```JAVA
 {
   public static int Past(int h, int m, int s)
   {
@@ -198,7 +198,7 @@ Votre tâche consiste à écrire une fonction qui renvoie le temps écoulé depu
 
 ### Enoncé
 
-```
+```JAVA
 class Solution {
     static String removeExclamationMarks(String s) {
 
@@ -210,21 +210,19 @@ class Solution {
 
 ## Exercice 7 une aiguille dans une botte de foin avec findNeedle()
 
-```
 Pouvez-vous trouver l’aiguille dans la botte de foin ?
 Écrivez une fonction findNeedle() qui prend un array
 plein de déchets mais qui en contient un "needle"
 Une fois que votre fonction a trouvé l'aiguille,
 elle doit renvoyer un message (sous forme de chaîne) indiquant :
 "found the needle at position "en plus index il a trouvé l'aiguille,
-```
 
 - Pour résoudre ce problème nous allons procéder ainsi :
 
 - Nous décidons trouver un objet donc nosu allosn parcourir cete objet ; ici avec une **Boucle FOR** ; ainsi tant que la longueur totale de la botte de foin n'est pas parcourue **LENGTH**
 - LE FOR DEMARRE à 0 et s'incremente jusqu'a atteindre la valeur max **LENGTH**
 
-```
+```JAVA
 public class Kata {
     // Méthode pour trouver needle
     public static String findNeedle(Object[] haystack) {
@@ -264,7 +262,7 @@ public class Kata {
 - si les cas de figures ne se sont pas présentés l'auter joueur gagne
 - psvm permet d'éprouevr noter méthode en donnant des combinaisons de valeurs
 
-```
+```JAVA
 public class Kata {
     public static String rps(String choix1, String choix2) {
         if (choix1.equals(choix2)) return "Draw!";
@@ -285,7 +283,7 @@ public class Kata {
 }
 ```
 
-## Exercice 9 Location voiture réductions
+## Exercice 9 Location voiture réductions
 
 ### Enoncé
 
@@ -326,7 +324,7 @@ Après un trimestre difficile au bureau, vous décidez de prendre des vacances p
 
 ### Code final :
 
-```
+```JAVA
 public class Kata {
   public static int rentalCarCost(int d) {
 //     d = nombre de jours
@@ -348,7 +346,7 @@ public class Kata {
 }
 ```
 
-## Exercice 10 hydratation litre d'eau
+## Exercice 10 hydratation litre d'eau
 
 - Nathan adore faire du vélo.
 
@@ -380,7 +378,7 @@ Multipliez le temps (time) par 0,5 pour calculer les litres.
 Utilisez la fonction Math.floor() pour arrondir à la plus petite valeur.
 Retournez le résultat en entier.
 
-```
+```JAVA
 public class KeepHydrated {
     // Méthode pour calculer la quantité d'eau que nathan va boire
     public static int Liters(double time) {
@@ -401,7 +399,7 @@ Ce kata consiste à multiplier un nombre donné par huit s'il s'agit d'un nombre
 - Nous allons déterminer dans un if si le nombre est pair ou imparaire
 - Puis nous allons le multiplier par huit si il est pair
 
-```
+```JAVA
 public class Sid {
     public static int simpleMultiplication(int n) {
       // Condition en ternaire
@@ -415,7 +413,7 @@ public class Sid {
 
 Codez aussi vite que vous le pouvez ! Vous devez doubler l'entier et le renvoyer.
 
-```
+```JAVA
 class Java {
   public static int doubleInteger(int i) {
    i = i *2;
@@ -424,7 +422,7 @@ class Java {
 }
 ```
 
-## Exercice 13
+## Exercice 13 mission impossible
 
 Bienvenue. Dans ce kata, on vous demande de mettre au carré chaque chiffre d'un nombre et de les concaténer.
 
@@ -446,7 +444,7 @@ Convertir cette chaîne en entier.
 
 **Sortie :** Un entier résultant de la concaténation des carrés des chiffres.
 
-```
+```JAVA
 public class SquareDigit {
 
     // Méthode qui prend un entier `n` en entrée, par exemple 9119
