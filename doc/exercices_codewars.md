@@ -16,6 +16,8 @@
 - [Exercice 4 If b is boolean ](#exercice-4-if-boolean-is-b-yes-or-no)
 - [Exercice 5 Convertir les heures](#exercice-5-convertir-les-heures)
 - [Exercice 6 Supprimer les points d'exclamation](#exercice-6-supprimer-tout-les-points-dexclamation-avec-replace)
+- [Une aiguille dans une botte de foin avec findneedle](#exercice-7-une-aiguille-dans-une-botte-de-foin-avec-findneedle)
+- [Pierre feuille papier ciseaux rps](#exercice-8-pierre-feuille-papier--equals-rps)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -199,6 +201,83 @@ class Solution {
         return s.replace("!", "");
 
 }}
+```
+
+## Exercice 7 une aiguille dans une botte de foin avec findNeedle()
+
+```
+Pouvez-vous trouver l’aiguille dans la botte de foin ?
+Écrivez une fonction findNeedle() qui prend un array
+plein de déchets mais qui en contient un "needle"
+Une fois que votre fonction a trouvé l'aiguille,
+elle doit renvoyer un message (sous forme de chaîne) indiquant :
+"found the needle at position "en plus index il a trouvé l'aiguille,
+```
+
+- Pour résoudre ce problème nous allons procéder ainsi :
+
+- Nous décidons trouver un objet donc nosu allosn parcourir cete objet ; ici avec une **Boucle FOR** ; ainsi tant que la longueur totale de la botte de foin n'est pas parcourue **LENGTH**
+- LE FOR DEMARRE à 0 et s'incremente jusqu'a atteindre la valeur max **LENGTH**
+
+```
+public class Kata {
+    // Méthode pour trouver needle
+    public static String findNeedle(Object[] haystack) {
+        // Parcourir la motte de foin avec un for de 0 jusqu'a sa logueur max
+        for (int i = 0; i < haystack.length; i++) {
+          // compare la chaine de caractère needle et si elme est égale
+         // à la position dans la motte de foin alors on retorune l'empalcement correspondant
+            if ("needle".equals(haystack[i])) {
+                return "found the needle at position " + i;
+            }
+        }
+        // Si "needle" n'est pas trouvé (au cas où)
+        return "needle not found";
+    }
+
+  public static void main(String[] args){
+    // declarer le tableau
+
+    Object[] haystack = {"hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"};
+       // Appel de la méthode findNeedle qui applique sa boucle for
+    //qui retourne sa position si les noms correspondent
+        String resultat = findNeedle(haystack);
+        System.out.println(resultat);
+  }
+}
+```
+
+## Exercice 8 Pierre feuille papier ... equals rps
+
+- Pierre-papier-ciseaux EN JAVA :
+- Jouons ! Il faut retourner quel joueur a gagné ! En cas d'égalité retourner Draw!.
+
+- NOus allons donc créer notre methode principale que nosu nommons RPS ; rock paper scissors qui fonctionne en paire donc possède deux types
+- Puis nous allons mettre dans des ifs les differents cas possibles
+- Ainsi nous allons écrire si l'option1 est égale à l'option2 et bien nosu allons recommencer ( égalité)
+- Pusi ensuite nous allons lister les 3 cas de figures de victorie d'un des joueurs
+- si les cas de figures ne se sont pas présentés l'auter joueur gagne
+- psvm permet d'éprouevr noter méthode en donnant des combinaisons de valeurs
+
+```
+public class Kata {
+    public static String rps(String choix1, String choix2) {
+        if (choix1.equals(choix2)) return "Draw!";
+        if ((choix1.equals("rock") && choix2.equals("scissors")) ||
+            (choix1.equals("paper") && choix2.equals("rock")) ||
+            (choix1.equals("scissors") && choix2.equals("paper"))) {
+            return "Player 1 won!";
+        }
+        return "Player 2 won!";
+    }
+
+    public static void main(String[] args) {
+        // Tests simples
+        System.out.println(rps("scissors", "paper"));
+        System.out.println(rps("scissors", "rock"));
+        System.out.println(rps("paper", "paper"));
+    }
+}
 ```
 
 ![border](../assets/line/line-pink-point_l.png)
