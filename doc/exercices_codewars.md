@@ -15,9 +15,9 @@
 - [Exercice 3 Nombre de pages \* nombre d'élèves](#exercice-3-nombre-de-pages-et-nombre-délèves)
 - [Exercice 4 If b is boolean ](#exercice-4-if-boolean-is-b-yes-or-no)
 - [Exercice 5 Convertir les heures](#exercice-5-convertir-les-heures)
-- [Exercice 6 Supprimer les points d'exclamation](#exercice-6-supprimer-tout-les-points-dexclamation-avec-replace)
-- [Une aiguille dans une botte de foin avec findneedle](#exercice-7-une-aiguille-dans-une-botte-de-foin-avec-findneedle)
-- [Pierre feuille papier ciseaux rps](#exercice-8-pierre-feuille-papier--equals-rps)
+- [Exercice 6 Supprimer les points d'exclamation avec REPLACE](#exercice-6-supprimer-tout-les-points-dexclamation-avec-replace)
+- [Exercice 7 Une aiguille dans une botte de foin avec FOR](#exercice-7-une-aiguille-dans-une-botte-de-foin-avec-findneedle)
+- [Exercice 8 Pierre feuille papier ciseaux ](#exercice-8-pierre-feuille-papier--ifs)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -247,7 +247,7 @@ public class Kata {
 }
 ```
 
-## Exercice 8 Pierre feuille papier ... equals rps
+## Exercice 8 Pierre feuille papier ... IF's
 
 - Pierre-papier-ciseaux EN JAVA :
 - Jouons ! Il faut retourner quel joueur a gagné ! En cas d'égalité retourner Draw!.
