@@ -1,4 +1,4 @@
-# Main Title
+# JAVA Doc
 
 <!-- Main image  -->
 
@@ -10,7 +10,8 @@
 
 # Navigation
 
-- [Benchmark SGBDR](./doc/benchmark-sgbdr.md)
+- [Exercices CodeWars](./doc/exercices_codewars.md)
+- [JAVA Tools](./doc/java_tools.md)
 
 ![border](./assets/line/line-pink-point_l.png)
 
