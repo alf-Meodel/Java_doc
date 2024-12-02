@@ -10,8 +10,12 @@
 
 ## Sommaire
 
-- [Exercice 1 tableaux](#exercice-1)
-- [Exercice 2 Modulo et fleurs](#exercice-1)
+- [Exercice 1 tableaux](#exercice-1-les-tableaux)
+- [Exercice 2 Modulo et fleurs](#exercice-2-une-histoire-de-fleurs-divisbles-par-2-ou-non)
+- [Exercice 3 Nombre de pages \* nombre d'élèves](#exercice-3-nombre-de-pages-et-nombre-délèves)
+- [Exercice 4 If b is boolean ](#exercice-4-if-boolean-is-b-yes-or-no)
+- [Exercice 5 Convertir les heures](#exercice-5-convertir-les-heures)
+- [Exercice 6 Supprimer les points d'exclamation](#exercice-6-supprimer-tout-les-points-dexclamation-avec-replace)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -19,7 +23,7 @@
 
 ![border](../assets/line/line-pink-point_l.png)
 
-## Exercice 1
+## Exercice 1 les tableaux
 
 Creation d'un tableau à partir d'une methode smash
 
@@ -75,7 +79,7 @@ smash("hello");
 
 ![border](../assets/line/line-pink-point_r.png)
 
-## Exercice 2
+## Exercice 2 une histoire de fleurs divisbles par 2 ou non
 
 Timmy et Sarah pensent qu'ils sont amoureux, mais là où ils vivent, ils ne le sauront qu'une fois qu'ils auront chacun cueilli une fleur. Si l'une des fleurs a un nombre pair de pétales et l'autre un nombre impair de pétales, cela signifie qu'ils sont amoureux.
 
@@ -112,13 +116,90 @@ public class OppositesAttract {
 }}
 ```
 
-## Exercice 2
+## Exercice 3 nombre de pages et nombre d'élèves
 
 ### Enoncé
 
 Tes camarades de classe t'ont demandé de leur copier des documents. Tu sais qu'il y a "n" camarades de classe et que les documents ont "m" pages.
 
-Votre tâche consiste à calculer le nombre de pages vierges dont vous avez besoin. Si n < 0ou m < 0 renvoie 0.
+Votre tâche consiste à calculer le nombre de pages vierges dont vous avez besoin. Si n < 0 ou m < 0 renvoie 0.
+
+### Code :
+
+```
+public class Paper
+{
+  public static int paperWork(int n, int m)
+  {
+    // Dans un premier temps nous allons vérifier si n ou m sont des valeurs invalides
+    if (n < 0 || m < 0){
+      return 0;
+    }
+
+    return n * m;
+  }
+}
+```
+
+## Exercice 4 if boolean is b yes or no
+
+Complétez la méthode qui prend une valeur booléenne et renvoie une "Yes"chaîne pour true, ou une "No"chaîne pour false.
+
+### code de base
+
+```
+class YesOrNo {
+    public static String boolToWord(boolean b) {
+        if (b) {
+            return "Yes";
+        } else {
+            return "No";
+        }
+    }
+}
+```
+
+## Exercice 5 convertir les heures
+
+### Énoncé
+
+L'horloge indique h les heures, m les minutes et s les secondes après minuit.
+
+Votre tâche consiste à écrire une fonction qui renvoie le temps écoulé depuis minuit en millisecondes.
+
+### Methode :
+
+- Pour résoudre cet exercice, nous devons convertir les heures, minutes et secondes en millisecondes et retourner le résultat. Voici une solution simple et claire :
+
+```
+{
+  public static int Past(int h, int m, int s)
+  {
+    // Conversion en millisecodne
+
+    int heureEnMillisecondes =  h * 60 * 60 * 1000;
+      int minutesEnMillisecondes = m * 60 * 1000;
+      int secondesEnMillisecondes = s * 1000;
+
+      // Somme des millisecondes
+      return heureEnMillisecondes + minutesEnMillisecondes + secondesEnMillisecondes;
+  }
+}
+```
+
+## Exercice 6 Supprimer tout les points d'exclamation avec replace
+
+### Enoncé
+
+```
+class Solution {
+    static String removeExclamationMarks(String s) {
+
+        // Remplace tous les '!' par une chaîne vide
+        return s.replace("!", "");
+
+}}
+```
 
 ![border](../assets/line/line-pink-point_l.png)
 
