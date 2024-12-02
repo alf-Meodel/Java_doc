@@ -6,10 +6,11 @@
 
 # EXERCICES JAVA CODE WARS
 
-![border](../assets/line/line-pink-point_l.png)
+![border](../assets/line/line-teal-point_l.png)
 
 ## Sommaire
 
+- [Entête d'une méthode comprehension](#entête-dune-méthode-comprehension)
 - [Exercice 1 tableaux](#exercice-1-les-tableaux)
 - [Exercice 2 Modulo et fleurs](#exercice-2-une-histoire-de-fleurs-divisbles-par-2-ou-non)
 - [Exercice 3 Nombre de pages \* nombre d'élèves](#exercice-3-nombre-de-pages-et-nombre-délèves)
@@ -23,8 +24,59 @@
 - [Exercice 11 si pair alors \* 8](#exercice-11-si-pair-alors--8)
 - [Exercice 12 Quick fast](#exercice-12-quick-fast)
 - [Exercice 13 Mission impossible](#exercice-13-mission-impossible)
+- [Exercice 13 Foreach Moutons](#exercice-14-foreach-moutons)
 
 ![border](../assets/line/border_deco_rb.png)
+
+# Entête d'une méthode comprehension
+
+```java
+public static int countSheeps(Boolean[] arrayOfSheeps) {
+```
+
+Exemple d’appel :
+
+```java
+int result = Counter.countSheeps(arrayOfSheeps);
+```
+
+![border](../assets/line/line-pink-point_l.png)
+
+## Exemple d’utilisation
+
+```java
+public class Counter {
+    public static int countSheeps(Boolean[] arrayOfSheeps) {
+        if (arrayOfSheeps == null) {
+            return 0; // Gérer le cas où l'entrée est nulle
+        }
+
+        int count = 0;
+        for (Boolean sheep : arrayOfSheeps) {
+            if (sheep != null && sheep) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+```
+
+## Appel de la méthode :
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Boolean[] sheeps = {true, true, false, null, true};
+        int totalSheeps = Counter.countSheeps(sheeps);
+        System.out.println("Nombre de moutons présents : " + totalSheeps);
+    }
+}
+```
+
+## Sortie attendue :
+
+Nombre de moutons présents : 3
 
 # Liste des exercices :
 
@@ -475,11 +527,115 @@ public class SquareDigit {
 }
 ```
 
-### Exercice 14
+## Exercice 14 FOREACH Moutons
 
-Implémenter une fonction qui convertit la valeur booléenne donnée en sa représentation sous forme de chaîne.
+### Enoncé :
 
-Remarque : seules les entrées valides seront fournies.
+Considérons un tableau/une liste de moutons dans lesquels certains moutons peuvent manquer à leur place. Nous avons besoin d'une fonction **qui compte le nombre de moutons présents** dans le tableau (vrai signifie présent).
+
+### Par exemple :
+
+```JAVA
+[true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]
+```
+
+La bonne réponse serait 17 (true).
+
+### Décomposer les tâches
+
+- Parcourir le tableau des moutons.
+- Vérifier si chaque élément représente un mouton présent (true).
+- Gérer les cas où les éléments peuvent être null (valeur manquante).
+- Compter les moutons valides (ceux qui sont true).
+- Retourner le total.
+
+### Traduire chaque tâche en code
+
+1. Parcourir le tableau
+   En Java, nous utilisons une boucle for-each pour parcourir un tableau
+
+```java
+for (Boolean sheep : arrayOfSheeps) {
+// Code à exécuter pour chaque mouton
+}
+```
+
+2. Vérifier si le mouton est présent
+   Nous devons vérifier deux choses pour chaque élément du tableau :
+
+- Que l'élément n'est pas null.
+- Que l'élément est égal à true
+
+```JAVA
+if (sheep != null && sheep) {
+    // Mouton présent
+}
+```
+
+### Compter les moutons valides
+
+Pour compter les moutons présents, nous utilisons une variable count que nous incrémentons chaque fois qu'un mouton valide est trouvé :
+
+```java
+int count = 0;
+for (Boolean sheep : arrayOfSheeps) {
+    if (sheep != null && sheep) {
+        count++;
+    }
+}
+```
+
+### Retourner le total
+
+Une fois la boucle terminée, nous retournons la valeur de count :
+
+```java
+return count;
+```
+
+### CODE :
+
+```java
+public class Counter {
+    public static int countSheeps(Boolean[] arrayOfSheeps) {
+        // Initialiser le compteur
+        int count = 0;
+
+        // Parcourir chaque élément du tableau
+        for (Boolean sheep : arrayOfSheeps) {
+            // Vérifier si le mouton est présent
+            if (sheep != null && sheep) {
+                count++;
+            }
+        }
+
+        // Retourner le total des moutons présents
+        return count;
+    }
+}
+```
+
+### Tester le code :
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Boolean[] sheeps = {
+            true, true, true, false,
+            true, true, null, true,
+            false, null, true, false
+        };
+
+        int result = Counter.countSheeps(sheeps);
+        System.out.println("Nombre de moutons présents : " + result); // Devrait afficher 6
+    }
+}
+```
 
 ![border](../assets/line/line-pink-point_l.png)
 
