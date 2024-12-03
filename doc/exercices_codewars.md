@@ -26,6 +26,10 @@
 - [Exercice 13 Mission impossible](#exercice-13-mission-impossible)
 - [Exercice 14 Foreach Moutons](#exercice-14-foreach-moutons)
 
+## Méthodes utilisées
+
+- [Value Of : transformer un int en string ](#valueof-)
+
 ![border](../assets/line/border_deco_rb.png)
 
 # Entête d'une méthode comprehension
@@ -696,7 +700,7 @@ class Kata {
 }
 ```
 
-## Exercice 16
+## Exercice 16 distributeur de 4 à 6 billets
 
 Les distributeurs automatiques de billets autorisent les codes PIN à 4 ou 6 chiffres et les codes PIN ne peuvent contenir que 4 ou 6 chiffres exactement .
 
@@ -727,6 +731,49 @@ public class Solution {
     return true;
   }
 }
+```
+
+## Exercice 17 Convertisseur
+
+## ValueOF :
+
+- String.valueOf() convertit un type primitif ou un objet en chaîne. Pour les primitifs, il utilise la méthode de conversion appropriée (ex.: Integer.toString). Pour les objets, il retourne obj.toString() ou "null".
+
+```java
+class Kata {
+  public static String numberToString(int num) {
+
+    // POur retourner un string à partir d'une valeur int nosu allons convertir avec String = la valeur souhaité
+    // valueOf = le convertisseur
+     return String.valueOf(num);
+
+  }
+}
+```
+
+- Et pour ce resultat nous allons l'éprouver sur **une variable int** poru afficher le resultat
+
+```java
+public static void main (String[] args){
+    int number = 123;
+   System.out.println(numberToString(number));
+  }
+```
+
+## Exercice 18
+
+Énoncé :
+
+Nous avons besoin d'une fonction qui peut transformer une chaîne en un nombre. Quelles méthodes connaissez-vous pour y parvenir ?
+
+Remarque : ne vous inquiétez pas, toutes les entrées seront des chaînes et chaque chaîne est une représentation parfaitement valide d'un nombre entier.
+
+```java
+Exemples
+"1234" --> 1234
+"605"  --> 605
+"1405" --> 1405
+"-7" --> -7
 ```
 
 ![border](../assets/line/line-pink-point_l.png)
