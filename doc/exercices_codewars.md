@@ -1402,6 +1402,78 @@ class Kata {
 }
 ```
 
+# Exercice 31 :
+
+## Consignes
+
+Écrivez une fonction qui prend un tableau de nombres et renvoie la somme des nombres. Les nombres peuvent être négatifs ou non entiers. Si le tableau ne contient aucun nombre, vous devez renvoyer 0.
+
+```
+Exemples
+Entrée : [1, 5.2, 4, 0, -1]
+Sortie :9.2
+
+Entrée : []
+Sortie :0
+
+Entrée : [-2.398]
+Sortie :-2.398
+```
+
+#### Hypothèses
+
+Vous pouvez supposer que seuls des chiffres vous sont donnés.
+Vous ne pouvez pas supposer la taille du tableau.
+Vous pouvez supposer que vous obtenez un tableau et si le tableau est vide, renvoyez 0.
+Les tests attendent une précision de 1e-4.
+
+Ce que nous testons
+Nous testons des boucles et des opérations mathématiques de base. Ceci est destiné aux débutants qui apprennent les boucles et les opérations mathématiques.
+Les utilisateurs avancés peuvent trouver cela extrêmement simple et peuvent facilement écrire cela sur une seule ligne.
+
+## CODE :
+
+```java
+public class SumArray {
+
+  public static double sum(double[] numbers) {
+    // On initialise la somme à zéro
+    double somme = 0.0;
+
+    // Puis nous allons parcourir le tableau passé en paramètre 'numbers'
+    // avec une entité 'nombre' qui représente chaque élément du tableau
+    // Pour chaque élément trouvé, on ajoute sa valeur à la somme de départ
+    for (double nombre : numbers) {
+      somme += nombre; // Ajout de l'élément courant à la somme
+    }
+
+    // Une fois que tous les éléments ont été parcourus et ajoutés,
+    // on renvoie la somme totale calculée
+    return somme;
+  }
+
+  public static void main(String[] args) {
+    // Nous testons la méthode avec plusieurs tableaux de données
+
+    // Exemple 1 : Tableau avec plusieurs nombres positifs et négatifs
+    double[] tableau1 = {1, 5.2, 4, 0, -1};
+    System.out.println(sum(tableau1)); // Résultat attendu : 9.2
+
+    // Exemple 2 : Tableau vide
+    // Cela vérifie si la méthode renvoie bien 0 lorsque le tableau est vide
+    double[] tableau2 = {};
+    System.out.println(sum(tableau2)); // Résultat attendu : 0
+
+    // Exemple 3 : Tableau contenant un seul nombre négatif
+    double[] tableau3 = {-2.398};
+    System.out.println(sum(tableau3)); // Résultat attendu : -2.398
+
+    // Les tests permettent de valider que la méthode fonctionne
+    // correctement pour différents cas d'utilisation
+  }
+}
+```
+
 ---
 
 ![border](../assets/line/line-pink-point_l.png)
