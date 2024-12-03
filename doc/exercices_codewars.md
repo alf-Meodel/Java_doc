@@ -41,6 +41,7 @@
 - [To Binary String: Chaine en binaire](#tobinarystring-)
 - [Str.Substring ](#strsubstring)
 - [CharAt: renvoie le caractère à la position indiqué](#charat)
+- [Substring: exemple 2 ](#substring-explication-2-)
 
 ![border](../assets/line/border_deco_rb.png)
 
