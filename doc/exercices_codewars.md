@@ -1162,6 +1162,104 @@ public class Kata {
 
 # Exercice 27
 
+### Objectif :
+
+Créer une chaîne où chaque lettre de l'entrée est répétée selon sa position (1 pour la première lettre, 2 pour la deuxième, etc.).
+La première occurrence de chaque lettre est en majuscule, et le reste en minuscule.
+Les parties sont séparées par des tirets (-).
+
+### Approche :
+
+#### Parcourir la chaîne.
+
+Répéter chaque caractère selon sa position (1 pour le premier caractère, 2 pour le deuxième...).
+Appliquer les majuscules et les minuscules correctement.
+Joindre les parties avec des tirets.
+
+## CODE :
+
+```java
+public class Accumul {
+    public static String accum(String s) {
+        StringBuilder result = new StringBuilder();
+
+        // Parcourir chaque caractère de la chaîne
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            // Ajouter la lettre en majuscule
+            result.append(Character.toUpperCase(c));
+
+            // Ajouter les lettres en minuscule (répétées i fois)
+            for (int j = 0; j < i; j++) {
+                result.append(Character.toLowerCase(c));
+            }
+
+            // Ajouter un tiret si ce n'est pas le dernier caractère
+            if (i < s.length() - 1) {
+                result.append("-");
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        // Exemples de test
+        System.out.println(accum("abcd"));    // "A-Bb-Ccc-Dddd"
+        System.out.println(accum("RqaEzty"));// "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+        System.out.println(accum("cwAt"));   // "C-Ww-Aaa-Tttt"
+    }
+}
+```
+
+### Décomposition du code :
+
+Initialiser un StringBuilder pour **stocker le résultat** :
+
+```java
+StringBuilder result = new StringBuilder();
+```
+
+**Parcourir** la chaîne s **avec une boucle for** :
+
+Utiliser l'indice pour accéder à chaque caractère et pour déterminer combien de fois il doit être répété.
+
+```java
+for (int i = 0; i < s.length(); i++) {
+    char c = s.charAt(i); // Obtenir le caractère à la position i
+}
+```
+
+Ajouter la lettre en majuscule :
+
+```java
+result.append(Character.toUpperCase(c));
+```
+
+Ajouter les répétitions en minuscule avec une boucle imbriquée :
+
+```java
+for (int j = 0; j < i; j++) {
+    result.append(Character.toLowerCase(c));
+}
+```
+
+Ajouter un tiret sauf après le dernier caractère :
+
+```java
+if (i < s.length() - 1) {
+    result.append("-");
+}
+```
+
+5. Assembler et Retourner
+   Une fois toutes les parties construites, convertir le StringBuilder en une chaîne finale :
+
+```java
+return result.toString();
+```
+
 ---
 
 ![border](../assets/line/line-pink-point_l.png)
