@@ -42,6 +42,7 @@
 - [Str.Substring ](#strsubstring)
 - [CharAt: renvoie le caractère à la position indiqué](#charat)
 - [Substring: exemple 2 ](#substring-explication-2-)
+- [Replace: espace par des espaces vides ](#replace)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -929,7 +930,6 @@ public class Kata {
         int longueur = mot.length();
         // Déterminer l'indice central
         int milieu = longueur / 2;
-
         // Vérifier si la longueur du mot est paire ou impaire
         if (longueur % 2 == 0) {
             // Si la longueur est paire, retourner les deux caractères centraux
@@ -939,7 +939,6 @@ public class Kata {
             return mot.substring(milieu, milieu + 1);
         }
     }
-
     public static void main(String[] args) {
         // Exemples de tests
         System.out.println(getMiddle("test"));     // "es" : deux caractères centraux
@@ -947,6 +946,114 @@ public class Kata {
         System.out.println(getMiddle("middle"));  // "dd" : deux caractères centraux
         System.out.println(getMiddle("A"));       // "A" : seul caractère
     }
+}
+```
+
+# Exercice 23 si pair Even sinon Odd
+
+### Consignes :
+
+Créez une fonction qui prend un entier comme argument et renvoie "Even"pour les nombres pairs ou "Odd"pour les nombres impairs.
+
+### Traduction du problème en code :
+
+#### Qu'est-ce qu'un nombre pair ?
+
+Un nombre est pair s'il est divisible par 2 sans reste.
+Exemple : 4 % 2 == 0, donc 4 est pair.
+
+#### Qu'est-ce qu'un nombre impair ?
+
+Un nombre est impair s'il n'est pas divisible par 2 sans reste.
+Exemple : 5 % 2 != 0, donc 5 est impair.
+
+#### Comment utiliser ces règles dans le code ?
+
+En utilisant l'opérateur modulo %, qui retourne le reste d'une division.
+Si number % 2 == 0, alors le nombre est pair.
+Sinon, il est impair.
+
+### Code :
+
+```java
+public class Kata {
+    public static String evenOrOdd(int number) {
+        // Vérifier si le nombre est pair ou impair
+        if (number % 2 == 0) {
+            return "Even"; // Pair
+        } else {
+            return "Odd";  // Impair
+        }
+    }
+    public static void main(String[] args) {
+        // Exemples de test
+        System.out.println(evenOrOdd(4));  // "Even"
+        System.out.println(evenOrOdd(7));  // "Odd"
+        System.out.println(evenOrOdd(0));  // "Even"
+        System.out.println(evenOrOdd(-3)); // "Odd"
+    }
+}
+```
+
+# Exercice 24 Suppression des espaces
+
+### REPLACE
+
+La méthode replace() renvoie une nouvelle chaîne de caractères dans laquelle tout ou partie des correspondances à un modèle sont remplacées par un remplacement.
+
+#### Consigne
+
+Écrivez une fonction qui supprime les espaces de la chaîne, puis renvoie la chaîne résultante.
+
+#### Exemples ( Entrée -> Sortie ) :
+
+```
+"8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
+"8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
+"8aaaaa dddd r     " -> "8aaaaaddddr"
+```
+
+### CODE :
+
+```
+public class Kata {
+    public static String noSpace(final String x) {
+        return x.replace(" ", "");
+    }
+  public static void main (String[] args){
+    System.out.println(noSpace("lo l o lo g h  g f "));
+  }
+
+}
+```
+
+# Exercice 25 Hero et Dragon :
+
+Un héros est en route vers le château pour accomplir sa mission.
+Cependant, on lui a dit que le château est entouré de quelques dragons puissants !
+
+- **Chaque dragon nécessite 2 balles** pour être vaincu,
+- notre héros n'a aucune idée du nombre de balles qu'il doit transporter.
+- En supposant qu'il va récupérer un nombre spécifique de balles et avancer pour combattre un autre nombre spécifique de dragons, survivra-t-il ?
+
+Renvoie vrai si oui, faux sinon :)
+
+### Objectif : Vérifier si le nombre de balles est suffisant
+
+```java
+class Solution {
+  public static boolean hero(int bullets, int dragons) {
+    // Nombre de balles suffisant ?
+    return bullets >= dragons * 2;
+  }
+
+  public static void main(String[] args) {
+    // Comparatif avec paire de valeurs
+    System.out.println(hero(10, 5)); // true : 10 balles pour 5 dragons
+    System.out.println(hero(7, 4));  // false : 7 balles pour 4 dragons (besoin de 8)
+    System.out.println(hero(4, 2));  // true : 4 balles pour 2 dragons
+    System.out.println(hero(0, 1));  // false : 0 balles pour 1 dragon
+  }
 }
 ```
 
