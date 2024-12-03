@@ -72,6 +72,18 @@ public class Main {
 }
 ```
 
+### StringBuilder : Append
+
+append() est une méthode de la classe StringBuilder (ou StringBuffer). Elle permet d'ajouter du contenu à la fin d'une chaîne existante sans recréer un nouvel objet, contrairement à la concaténation avec +.
+
+### Exemple :
+
+```
+StringBuilder sb = new StringBuilder("Bonjour");
+sb.append(" le monde"); // Ajoute " le monde"
+System.out.println(sb.toString()); // Affiche : "Bonjour le monde"
+```
+
 ![border](../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire"> <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;"></a>

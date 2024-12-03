@@ -49,6 +49,7 @@
 - [StringBuilder pour manipuler des chaînes dynamiques](#stringbuilder-pour-manipuler-des-chaînes-dynamiques)
 - [Difference entre stringBuilder et String](#différence-entre-stringbuilder-et-string)
 - [Split ou comment retirer le elements d'une phrase](#retirer)
+- [Append pour rajoter des caractères à la suite ](#append--pour-rajouter-des-caractères-à-la-suite)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1325,6 +1326,79 @@ public class Kata {
         System.out.println(find_average(new int[]{10, 20, 30})); // Résultat attendu : 20.0
         System.out.println(find_average(new int[]{}));           // Résultat attendu : 0.0
     }
+}
+```
+
+# Exercice 30 comparer les longueur min max horrible
+
+## Consignes
+
+Simplement, étant donné une chaîne de mots, renvoie la longueur du ou des mots les plus courts.
+
+La chaîne ne sera jamais vide et vous n'avez pas besoin de tenir compte des différents types de données.
+
+## CODE :
+
+```java
+public class Kata {
+    public static int findShort(String s) {
+        // Diviser la chaîne d'entrée s en un tableau de mots
+        String[] words = s.split(" ");
+
+        // Initialiser la longueur minimale avec la longueur du premier mot
+        int minLength = words[0].length();
+
+
+        // Cela signifie ; pour l'element words nous allons créer une occurence word sans le s qui va etre un string et va définir le type des sorties de ce for ?
+
+        for (String word : words) {
+            if (word.length() < minLength) {
+                minLength = word.length();
+            }
+        }
+
+        // Retourner la longueur minimale
+        return minLength;
+    }
+}
+```
+
+# Exercice 30 comparer les longueur min max horrible
+
+#### Tâche:
+
+Étant donné un entier non négatif, 3par exemple, renvoyez une chaîne avec un murmure : "1 sheep...2 sheep...3 sheep...". L'entrée sera toujours valide, c'est-à-dire sans entier négatif.
+
+## Append : pour rajouter des caractères à la suite
+
+#### Ce que fait append :
+
+```
+append() ajoute du contenu (texte, nombres, caractères, etc.) à la fin d'un objet StringBuilder.
+La chaîne est modifiée directement : Pas de création de nouveaux objets.
+Chaînage possible : Vous pouvez enchaîner plusieurs appels de manière concise.
+Performant : Plus rapide que l'opérateur + pour manipuler des chaînes longues ou répétitives.
+
+```
+
+```java
+class Kata {
+  public static String countingSheep(int num) {
+
+    // Utiliser un StringBuilder
+        StringBuilder resultByStringBuilder = new StringBuilder();
+
+        // Boucler de 1 pour ajouter des moutontons
+        for (int i = 1; i <= num; i++) {
+          //Donc ici à chaque tour nous rajoutons le nombre i contenu dans le for
+          //Pusi nosu y ajoutons un peu de texte avec append
+            resultByStringBuilder.append(i).append(" sheep...");
+        }
+
+        // Retour de  la chaîne finale
+        return resultByStringBuilder.toString();
+
+  }
 }
 ```
 
