@@ -46,6 +46,8 @@
 - [Cast with (long) a hunting dragon story ](#cast-with-long)
 - [Cast with (long ](#cast-with-long)
 - [Cast with méthode-arrayssortnumbers- ](#méthode-arrayssortnumbers-)
+- [StringBuilder pour manipuler des chaînes dynamiques](#stringbuilder-pour-manipuler-des-chaînes-dynamiques)
+- [Difference entre stringBuilder et String](#différence-entre-stringbuilder-et-string)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1019,6 +1021,7 @@ La méthode replace() renvoie une nouvelle chaîne de caractères dans laquelle 
 ### CODE :
 
 ```
+
 public class Kata {
     public static String noSpace(final String x) {
         return x.replace(" ", "");
@@ -1026,8 +1029,8 @@ public class Kata {
   public static void main (String[] args){
     System.out.println(noSpace("lo l o lo g h  g f "));
   }
-
 }
+
 ```
 
 # Exercice 25 Hero et Dragon :
@@ -1116,6 +1119,50 @@ class Kata {
   }
 }
 ```
+
+# Exercice 27
+
+#### StringBuilder pour manipuler des chaînes dynamiques
+
+StringBuilder est une classe en Java utilisée pour manipuler des chaînes de caractères de manière efficace. Contrairement à String, qui est immuable, StringBuilder permet des modifications directes **(ajout, suppression, etc.)** sans créer de nouveaux objets. Idéal pour manipuler des chaînes dynamiques.
+
+### Différence entre StringBuilder et String
+
+#### String :
+
+- **Immuable :** Une fois créé, son contenu ne peut pas être modifié.
+  Méthodes comme substring, indexOf, ou length permettent d'accéder à son contenu sans le modifier.
+
+#### StringBuilder :
+
+- **Modifiable (mutable) :** Son contenu peut être modifié directement.
+  Méthodes spécifiques comme append, reverse, insert, et delete sont conçues pour manipuler les chaînes efficacement.
+
+#### Consignes
+
+Complétez la solution de manière à inverser la chaîne qui lui est transmise.
+
+```
+'world'  =>  'dlrow'
+'word'   =>  'drow'
+```
+
+## CODE :
+
+```java
+public class Kata {
+
+  public static String solution(String str) {
+
+    return new StringBuilder(str).reverse().toString();
+  }
+
+}
+```
+
+# Exercice 27
+
+---
 
 ![border](../assets/line/line-pink-point_l.png)
 
