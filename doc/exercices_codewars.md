@@ -44,6 +44,8 @@
 - [Substring: exemple 2 ](#substring-explication-2-)
 - [Replace: espace par des espaces vides ](#replace)
 - [Cast with (long) a hunting dragon story ](#cast-with-long)
+- [Cast with (long ](#cast-with-long)
+- [Cast with méthode-arrayssortnumbers- ](#méthode-arrayssortnumbers-)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1056,6 +1058,61 @@ class Solution {
 
   public static void main(String[] args){
     System.out.println(hero(10,5));
+  }
+}
+```
+
+# Exercice 26 array sorts
+
+## Méthode Arrays.sort(numbers) :
+
+Arrays.sort(numbers) trie le tableau numbers dans l'ordre croissant. Cette méthode utilise un algorithme de tri optimisé (généralement Timsort) pour organiser les éléments du plus petit au plus grand. Après l'appel, les éléments du tableau sont réarrangés directement dans cet ordre.
+
+## Conditions :
+
+Créez une fonction qui **renvoie la somme des deux nombres positifs les plus bas** à partir d'un tableau d' **au moins 4 entiers positifs**. Aucun nombre flottant ou entier non positif ne sera transmis.
+
+Pour Java, ces entiers seront en double précision (long).
+
+Par exemple, lorsqu'un tableau est passé comme
+`[19, 5, 42, 2, 77], la sortie doit être 7.`
+
+`[10, 343445353, 3453445, 3453545353453]devrait revenir 3453455.`
+
+### Traduction de l'Énoncé en Code
+
+Trouver les deux plus petits nombres dans un tableau donné.
+Additionner ces deux nombres et retourner le résultat.
+
+#### Étapes pour résoudre le problème :
+
+- Trier le tableau.
+  Sélectionner les deux premiers éléments après le tri (les deux plus petits).
+
+- dditionner ces deux éléments.
+- Contraintes :
+
+  - Le tableau contient toujours au moins 4 nombres positifs.
+    Les nombres sont des long, donc capables de gérer des valeurs très grandes.
+
+### Code :
+
+```java
+class Kata {
+  public static long sumTwoSmallestNumbers(long[] numbers) {
+    // Trier le tableau pour trouver les deux plus petits nombres
+    Arrays.sort(numbers);
+    // Additionner les deux premiers nombres après le tri
+    return numbers[0] + numbers[1];
+  }
+
+  public static void main(String[] args) {
+    // Exemples de test
+    System.out.println(sumTwoSmallestNumbers(new long[]{19, 5, 42, 2, 77}));
+    // Résultat attendu : 7
+
+    System.out.println(sumTwoSmallestNumbers(new long[]{10, 343445353, 3453445, 3453545353453L}));
+    // Résultat attendu : 3453455
   }
 }
 ```
