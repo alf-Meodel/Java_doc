@@ -25,12 +25,21 @@
 - [Exercice 12 Quick fast](#exercice-12-quick-fast)
 - [Exercice 13 Mission impossible](#exercice-13-mission-impossible)
 - [Exercice 14 Foreach Moutons](#exercice-14-foreach-moutons)
+- [Exercice 15 les-fameux-amis-à-4-lettres](#exercice-15-les-fameux-amis-à-4-lettres)
+- [Exercice 16 distributeur-de-4-à-6-billets](#exercice-16-distributeur-de-4-à-6-billets)
+- [Exercice 17 exercice-17-convertisseur](#exercice-17-convertisseur)
+- [Exercice 18 transformer-une-chaine-en-un-nombre](#exercice-18-transformer-une-chaine-en-un-nombre)
+- [Exercice 19 convertir-en-binaire](#exercice-19-convertir-en-binaire)
+- [Exercice 20 supprime-le-premier-et-le-dernier-caractère](#exercice-20-supprime-le-premier-et-le-dernier-caractère)
+- [Exercice 21 tableau-inversé](#exercice-21-tableau-inversé)
+- [Exercice 22](#exercice-22)
 
 ## Méthodes utilisées
 
 - [Value Of : transformer un int en string ](#valueof-)
 - [Integer.parseInt(): chaine en nombre ](#integerparseint-)
 - [To Binary String: Chaine en binaire](#tobinarystring-)
+- [Str.Substring ](#strsubstring)
 - [CharAt: renvoie le caractère à la position indiqué](#charat)
 
 ![border](../assets/line/border_deco_rb.png)
@@ -791,7 +800,7 @@ public class StringToNumber {
 }
 ```
 
-## Exercice 19
+## Exercice 19 convertir en binaire
 
 ### toBinaryString :
 
@@ -818,7 +827,7 @@ public class Kata{
 }
 ```
 
-## Exercice 20
+## Exercice 20 Supprime le premier et le dernier caractère
 
 #### Consigne :
 
@@ -845,7 +854,7 @@ C'est assez simple. Votre objectif est de créer une fonction qui supprime le pr
    }
 ```
 
-## Exercice 21
+## Exercice 21 Tableau inversé
 
 ### CharAt
 
@@ -886,6 +895,56 @@ public class Kata {
         // Test cases
         System.out.println(java.util.Arrays.toString(digitize(35231))); // [1, 3, 2, 5, 3]
         System.out.println(java.util.Arrays.toString(digitize(0)));     // [0]
+    }
+}
+```
+
+# Exercice 22
+
+### Substring explication 2 :
+
+La méthode substring() retourne une sous-chaîne de la chaîne courante, entre un indice de début et un indice de fin.
+
+### Consignes
+
+On va vous donner une chaîne non vide . Votre tâche consiste à **renvoyer le(s) caractère(s) du milieu de la chaîne**.
+
+Si la longueur de la chaîne **est impaire**, renvoie le caractère du milieu.
+Si la longueur de la chaîne **est paire**, renvoie les 2 caractères du milieu.
+
+### Exemples :
+
+- "test" --> "es"
+- "testing" --> "t"
+- "middle" --> "dd"
+- "A" --> "A"
+
+### Code
+
+```java
+public class Kata {
+    public static String getMiddle(String mot) {
+        // Calculer la longueur totale du mot
+        int longueur = mot.length();
+        // Déterminer l'indice central
+        int milieu = longueur / 2;
+
+        // Vérifier si la longueur du mot est paire ou impaire
+        if (longueur % 2 == 0) {
+            // Si la longueur est paire, retourner les deux caractères centraux
+            return mot.substring(milieu - 1, milieu + 1);
+        } else {
+            // Si la longueur est impaire, retourner le caractère central
+            return mot.substring(milieu, milieu + 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Exemples de tests
+        System.out.println(getMiddle("test"));     // "es" : deux caractères centraux
+        System.out.println(getMiddle("testing")); // "t" : caractère central
+        System.out.println(getMiddle("middle"));  // "dd" : deux caractères centraux
+        System.out.println(getMiddle("A"));       // "A" : seul caractère
     }
 }
 ```
