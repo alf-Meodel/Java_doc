@@ -1160,7 +1160,20 @@ public class Kata {
 }
 ```
 
-# Exercice 27
+# Exercice 27 chaine de lettre qui se répètent
+
+#### CharAt
+
+La méthode charAt() renvoie une nouvelle chaîne contenant le caractère (ou, plus précisément, le point de code UTF-16) à la position indiquée en argument.
+
+```java
+Exemple hors contexte
+
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+const index = 4;
+console.log(`The character at index ${index} is ${sentence.charAt(index)}`);
+// Expected output: "The character at index 4 is q"
+```
 
 ### Objectif :
 
@@ -1170,45 +1183,53 @@ Les parties sont séparées par des tirets (-).
 
 ### Approche :
 
-#### Parcourir la chaîne.
-
-Répéter chaque caractère selon sa position (1 pour le premier caractère, 2 pour le deuxième...).
-Appliquer les majuscules et les minuscules correctement.
-Joindre les parties avec des tirets.
+- Parcourir la chaîne.
+- Répéter chaque caractère selon sa position (1 pour le premier caractère, 2 pour le deuxième...).
+- Appliquer les majuscules et les minuscules correctement.
+- Joindre les parties avec des tirets.
 
 ## CODE :
 
 ```java
 public class Accumul {
+
     public static String accum(String s) {
+        // Création d'un StringBuilder pour construire le résultat final.
+        // StringBuilder est utilisé pour manipuler les chaînes efficacement.
         StringBuilder result = new StringBuilder();
 
-        // Parcourir chaque caractère de la chaîne
+        // Parcours de chaque caractère de la chaîne d'entrée `s`.
+        // On utilise une boucle `for` pour aller de l'indice 0 jusqu'à la fin de la chaîne.
         for (int i = 0; i < s.length(); i++) {
+            // Extraction du caractère à l'indice actuel `i` et stockage dans la variable `c`.
             char c = s.charAt(i);
 
-            // Ajouter la lettre en majuscule
+            // Conversion du caractère en majuscule pour le début de la séquence.
             result.append(Character.toUpperCase(c));
 
-            // Ajouter les lettres en minuscule (répétées i fois)
+            // Ajout des répétitions en minuscule du caractère.
+            // La boucle interne parcourt `j` de 0 jusqu'à `i` (exclu), ajoutant `i` répétitions.
             for (int j = 0; j < i; j++) {
                 result.append(Character.toLowerCase(c));
             }
 
-            // Ajouter un tiret si ce n'est pas le dernier caractère
+            // Ajout d'un tiret `-` après chaque séquence,
+            // sauf pour la dernière lettre (quand `i` est le dernier indice).
             if (i < s.length() - 1) {
                 result.append("-");
             }
         }
 
+        // Conversion du StringBuilder en chaîne de caractères et retour du résultat final.
         return result.toString();
     }
 
     public static void main(String[] args) {
-        // Exemples de test
-        System.out.println(accum("abcd"));    // "A-Bb-Ccc-Dddd"
-        System.out.println(accum("RqaEzty"));// "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
-        System.out.println(accum("cwAt"));   // "C-Ww-Aaa-Tttt"
+        // Tests pour vérifier que la fonction produit les résultats attendus.
+        // Chaque entrée est transformée selon les règles du problème.
+        System.out.println(accum("abcd"));     // Résultat attendu : "A-Bb-Ccc-Dddd"
+        System.out.println(accum("RqaEzty"));  // Résultat attendu : "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+        System.out.println(accum("cwAt"));    // Résultat attendu : "C-Ww-Aaa-Tttt"
     }
 }
 ```
@@ -1227,7 +1248,8 @@ Utiliser l'indice pour accéder à chaque caractère et pour déterminer combien
 
 ```java
 for (int i = 0; i < s.length(); i++) {
-    char c = s.charAt(i); // Obtenir le caractère à la position i
+    // Obtenir le caractère à la position i
+    char c = s.charAt(i);
 }
 ```
 
