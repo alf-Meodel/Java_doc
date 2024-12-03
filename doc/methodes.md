@@ -11,6 +11,7 @@
 ## Sommaire
 
 - [Difference entre stringBuilder](#différence-entre-stringbuilder-et-string)
+- [Difference entre stringBuilder](#différence-entre-stringbuilder-et-string)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -29,6 +30,47 @@
 
 - **Modifiable (mutable) :** Son contenu peut être modifié directement.
   Méthodes spécifiques comme append, reverse, insert, et delete sont conçues pour manipuler les chaînes efficacement.
+
+```java
+public class Main {
+public static void main(String[] args) {
+// Chaîne d'entrée
+String phrase = "Bonjour, ceci est une phrase. {Avec quelques caractères spéciaux}/";
+
+// Supprimer les caractères avec split()
+String[] mots = phrase.split("[.,{}\\\\/]+");
+
+// Reconstituer la phrase sans les délimiteurs
+String resultat = String.join(" ", mots);
+
+// Afficher le résultat
+System.out.println(resultat);
+    }
+}
+```
+
+## Split() ou comment nettoyer un chaine de caractère
+
+### Définition :
+
+La méthode split() divise une chaîne en supprimant les délimiteurs spécifiés via une regex (ex. [.,{}\\/]+). Les éléments correspondants sont remplacés par des séparations, retournant un tableau des morceaux restants.
+
+- Cas d'utilisation :
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Chaîne d'entrée
+        String phrase = "Bonjour, ceci est une phrase. {Avec quelques caractères spéciaux}/";
+        // Supprimer les caractères avec split()
+        String[] mots = phrase.split("[.,{}\\\\/]+");
+        // Reconstituer la phrase sans les délimiteurs
+        String resultat = String.join(" ", mots);
+        // Afficher le résultat
+        System.out.println(resultat);
+    }
+}
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 

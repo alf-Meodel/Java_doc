@@ -48,6 +48,7 @@
 - [Cast with méthode-arrayssortnumbers- ](#méthode-arrayssortnumbers-)
 - [StringBuilder pour manipuler des chaînes dynamiques](#stringbuilder-pour-manipuler-des-chaînes-dynamiques)
 - [Difference entre stringBuilder et String](#différence-entre-stringbuilder-et-string)
+- [Split ou comment retirer le elements d'une phrase](#retirer)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1285,6 +1286,16 @@ return result.toString();
 # Exercice 29
 
 ## Consignes :
+
+## Split : retirer des elements d'une phrase :
+
+```java
+String[] words = s.split(" ");
+Divise la chaîne d'entrée s en un tableau de mots,
+en utilisant l’espace comme délimiteur.
+```
+
+## Consignes :
 
 Écrivez une fonction qui calcule la moyenne des nombres dans un tableau donné.
 
