@@ -15,6 +15,7 @@
 - [Exercices CodeWars](./doc/exercices_codewars.md)
 - [JAVA Cheat sheet](./doc/java_cheatsheet.md)
 - [Benchmark JAVA/NEST](./doc/benchmark.md)
+- [Les differents types en JAVA](./doc/java_type.md)
 
 ![border](./assets/line/border_deco_rb.png)
 

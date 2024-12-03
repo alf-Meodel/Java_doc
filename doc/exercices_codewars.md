@@ -1160,7 +1160,7 @@ public class Kata {
 }
 ```
 
-# Exercice 27 chaine de lettre qui se répètent
+# Exercice 28 chaine de lettre qui se répètent
 
 #### CharAt
 
@@ -1280,6 +1280,41 @@ if (i < s.length() - 1) {
 
 ```java
 return result.toString();
+```
+
+# Exercice 29
+
+## Consignes :
+
+Écrivez une fonction qui calcule la moyenne des nombres dans un tableau donné.
+
+Remarque : les tableaux vides doivent renvoyer 0.
+
+```java
+public class Kata {
+    public static double find_average(int[] array) {
+        // Vérifier si le tableau est vide
+        if (array.length == 0) {
+            return 0;
+        }
+
+        // Calculer la somme des éléments
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+
+        // Retourner la moyenne
+        return (double) sum / array.length;
+    }
+
+    public static void main(String[] args) {
+        // Tests
+        System.out.println(find_average(new int[]{1, 2, 3, 4})); // Résultat attendu : 2.5
+        System.out.println(find_average(new int[]{10, 20, 30})); // Résultat attendu : 20.0
+        System.out.println(find_average(new int[]{}));           // Résultat attendu : 0.0
+    }
+}
 ```
 
 ---
