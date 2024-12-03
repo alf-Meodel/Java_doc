@@ -29,6 +29,7 @@
 ## Méthodes utilisées
 
 - [Value Of : transformer un int en string ](#valueof-)
+- [Integer.parseInt(); chaine en nombre ](#integerparseint-)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -394,10 +395,7 @@ public class Kata {
      }else if (d >= 3){
        total -= 20;
      }
-
     return total;
-
-
   }
 }
 ```
@@ -508,7 +506,6 @@ public class SquareDigit {
         // Convertir l'entier en chaîne de caractères pour accéder à chaque chiffre individuellement
         // Exemple : Si n = 9119, alors number = "9119"
         String number = Integer.toString(n);
-
         // Utilisation de StringBuilder pour construire efficacement une nouvelle chaîne
         // qui contiendra les carrés de chaque chiffre concaténés
         StringBuilder result = new StringBuilder();
@@ -518,12 +515,10 @@ public class SquareDigit {
             // Convertir le caractère en entier
             // Exemple : '9' devient 9
             int digit = Character.getNumericValue(c);
-
             // Calculer le carré du chiffre et l'ajouter à la chaîne result
             // Exemple : si digit = 9, alors digit * digit = 81, et "81" est ajouté à result
             result.append(digit * digit);
         }
-
         // Convertir la chaîne résultante (contenant les carrés concaténés) en entier
         // Exemple : si result = "811181", alors Integer.parseInt("811181") retourne 811181
         return Integer.parseInt(result.toString());
@@ -760,9 +755,13 @@ public static void main (String[] args){
   }
 ```
 
-## Exercice 18
+## Exercice 18 transformer une chaine en un nombre
 
-Énoncé :
+### Integer.parseInt() :
+
+**Integer.parseInt(str)** convertit une chaîne en entier. Elle analyse le texte dans str pour produire un type int. Si str n'est pas une chaîne valide (ex.: "abc"), elle lève une NumberFormatException. Cette méthode est utile pour gérer des entrées numériques sous forme de texte. Exemple : return Integer.parseInt("123"); retourne 123.
+
+### Énoncé :
 
 Nous avons besoin d'une fonction qui peut transformer une chaîne en un nombre. Quelles méthodes connaissez-vous pour y parvenir ?
 
@@ -774,6 +773,20 @@ Exemples
 "605"  --> 605
 "1405" --> 1405
 "-7" --> -7
+```
+
+### Code :
+
+```java
+public class StringToNumber {
+  public static int stringToNumber(String str) {
+    return Integer.parseInt(str);
+  }
+
+  public static void main (String[] args){
+    System.out.println(stringToNumber("1235"));
+  }
+}
 ```
 
 ![border](../assets/line/line-pink-point_l.png)
