@@ -43,6 +43,7 @@
 - [CharAt: renvoie le caractère à la position indiqué](#charat)
 - [Substring: exemple 2 ](#substring-explication-2-)
 - [Replace: espace par des espaces vides ](#replace)
+- [Cast with (long) a hunting dragon story ](#cast-with-long)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1029,6 +1030,12 @@ public class Kata {
 
 # Exercice 25 Hero et Dragon :
 
+### Cast with (long)
+
+Le (long) force la conversion de dragons en type long, qui peut gérer des valeurs plus grandes qu'un int. Sans cela, dragons _ 2 reste un int et dépasse la limite maximale (2,147,483,647). Avec (long) dragons _ 2, le calcul se fait correctement sans débordement.
+
+### Consignes
+
 Un héros est en route vers le château pour accomplir sa mission.
 Cependant, on lui a dit que le château est entouré de quelques dragons puissants !
 
@@ -1041,18 +1048,14 @@ Renvoie vrai si oui, faux sinon :)
 ### Objectif : Vérifier si le nombre de balles est suffisant
 
 ```java
+
 class Solution {
   public static boolean hero(int bullets, int dragons) {
-    // Nombre de balles suffisant ?
-    return bullets >= dragons * 2;
+    return bullets >= (long) dragons * 2;
   }
 
-  public static void main(String[] args) {
-    // Comparatif avec paire de valeurs
-    System.out.println(hero(10, 5)); // true : 10 balles pour 5 dragons
-    System.out.println(hero(7, 4));  // false : 7 balles pour 4 dragons (besoin de 8)
-    System.out.println(hero(4, 2));  // true : 4 balles pour 2 dragons
-    System.out.println(hero(0, 1));  // false : 0 balles pour 1 dragon
+  public static void main(String[] args){
+    System.out.println(hero(10,5));
   }
 }
 ```
