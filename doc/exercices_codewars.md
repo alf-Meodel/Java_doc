@@ -29,7 +29,9 @@
 ## Méthodes utilisées
 
 - [Value Of : transformer un int en string ](#valueof-)
-- [Integer.parseInt(); chaine en nombre ](#integerparseint-)
+- [Integer.parseInt(): chaine en nombre ](#integerparseint-)
+- [To Binary String: Chaine en binaire](#tobinarystring-)
+- [CharAt: renvoie le caractère à la position indiqué](#charat)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -786,6 +788,105 @@ public class StringToNumber {
   public static void main (String[] args){
     System.out.println(stringToNumber("1235"));
   }
+}
+```
+
+## Exercice 19
+
+### toBinaryString :
+
+Integer.toBinaryString(int) convertit un entier en sa représentation binaire sous forme de chaîne. Par exemple, Integer.toBinaryString(5) retourne "101". Utile pour travailler avec des nombres en binaire sans manipuler des bits directement.
+
+#### Consignes :
+
+Implémentez une **fonction qui additionne deux nombres et renvoie leur somme en binaire**. La conversion peut être effectuée avant ou après l'addition.
+
+**Le nombre binaire renvoyé doit être une chaîne.**
+
+Exemples : (Entrée 1, Entrée 2 --> Sortie (explication)))
+
+1, 1 --> "10" (1 + 1 = 2 in decimal or 10 in binary)
+5, 9 --> "1110" (5 + 9 = 14 in decimal or 1110 in binary)
+
+```java
+public class Kata{
+
+  public static String binaryAddition(int a, int b){
+    //nous allons directement utiliser nos deu variables avec toBinaryString
+    return Integer.toBinaryString(a + b);
+  }
+}
+```
+
+## Exercice 20
+
+#### Consigne :
+
+C'est assez simple. Votre objectif est de créer une fonction qui supprime le premier et le dernier caractère d'une chaîne. Vous disposez d'un seul paramètre, la chaîne d'origine. Vous n'avez pas à vous soucier des chaînes contenant moins de deux caractères.
+
+### str.substring()
+
+- str.substring(beginIndex, endIndex)
+- extrait une sous-chaîne de str
+- allant de beginIndex (inclus) à endIndex (exclus).
+- beginIndex spécifie où commencer,
+- et endIndex où s'arrêter.
+
+```java
+
+   public class RemoveChars {
+    public static String remove (String str){
+      return str.substring(1, str.length() - 1);
+    }
+
+    public static void main (String[] args){
+      System.out.println(remove("Youpi"))
+    }
+   }
+```
+
+## Exercice 21
+
+### CharAt
+
+La méthode charAt() renvoie une nouvelle chaîne contenant le caractère (ou, plus précisément, le point de code UTF-16) à la position indiquée en argument.
+
+```java
+const sentence = 'The quick brown fox jumps over the lazy dog.';
+const index = 4;
+console.log(`The character at index ${index} is ${sentence.charAt(index)}`);
+// Expected output: "The character at index 4 is q"
+```
+
+### Consignes
+
+Convertir un nombre en tableau inversé de chiffres
+Étant donné un nombre aléatoire non négatif, vous devez renvoyer les chiffres de ce nombre dans un tableau dans l'ordre inverse.
+
+Exemple (entrée => sortie) :
+35231 => [1,3,2,5,3]
+0 => [0]
+
+```java
+public class Kata {
+    public static int[] digitize(long n) {
+        // Convertir le nombre en chaîne
+        String nombreEnChaine = Long.toString(n);
+        // Créer un tableau pour stocker les résultats
+        int[] result = new int[nombreEnChaine.length()];
+
+        // Parcourir les caractères de la chaîne de la fin au début
+        for (int i = 0; i < nombreEnChaine.length(); i++) {
+            // Extraire les chiffres en commençant par la fin
+            result[i] = nombreEnChaine.charAt(nombreEnChaine.length() - 1 - i) - '0';
+        }
+        return result;
+    }
+    public static void main(String[] args) {
+        // Test cases
+        System.out.println(java.util.Arrays.toString(digitize(35231))); // [1, 3, 2, 5, 3]
+        System.out.println(java.util.Arrays.toString(digitize(0)));     // [0]
+    }
 }
 ```
 
