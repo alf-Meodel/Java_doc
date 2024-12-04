@@ -60,6 +60,7 @@
 - [Difference entre stringBuilder et String](#différence-entre-stringbuilder-et-string)
 - [Split ou comment retirer le elements d'une phrase](#retirer)
 - [Append pour rajoter des caractères à la suite ](#append--pour-rajouter-des-caractères-à-la-suite)
+- [HASHSET : pour supprimer les doublons](#hashset-pour-supprimer-les-doublons)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1638,7 +1639,116 @@ public class Kata {
 }
 ```
 
-# Exercice 36
+# Exercice 36 Hashset pour éviter les doublons
+
+## Hashset pour supprimer les doublons
+
+Un HashSet est une structure de données en Java
+qui stocke des éléments uniques,
+
+- il ne garde qu'une seule instance
+  de chaque élément ajouté.
+- Si nous essayons d’ajouter un élément qui est déjà présent dans le HashSet,
+  il l'ignorera.
+
+## Consignes :
+
+- Un isogramme est un mot dont les lettres ne se répétent pas
+- Nous devons créer une focntion qui determine si une chaine de caractère est un isogramme
+- ( si oui true) ou non ( false)
+- ?? en Supposant que la chaîne vide compte (true)
+
+## CODE :
+
+```java
+import java.util.HashSet;
+
+public class isogram {
+    public static boolean isIsogram(String str) {
+        //  une chaîne vide est un isogramme et donc true
+        if (str.isEmpty()) {
+            return true;
+        }
+
+        // Convertir la chaîne en minuscules pour ignorer la casse
+        str = str.toLowerCase();
+
+
+      // Nous allons appeler une variable Hashset que nosu utilsierons plus tard
+      // Qui servira à stocker les caractères uniques
+        HashSet<Character> hashset_container = new HashSet<>();
+
+        // Parcourir chaque caractère de la chaîne
+        for (char c : str.toCharArray()) {
+            if (hashset_container.contains(c)) {
+                // Si le caractère est déjà dans le HashSet,
+              //alors ce n'est pas un isogramme
+              // Donc FALSE
+                return false;
+            }
+          // Si le caractère n'était pas un doublon alors nous allons
+            // Ajouter le caractère au HashSet
+            hashset_container.add(c);
+        }
+
+        // Si aucun doublon n'a été trouvé, la chaîne est un isogramme TRUE !!
+        return true;
+    }
+
+    public static void main(String[] args) {
+        // Test
+        System.out.println(isIsogram("kiki"));
+       System.out.println(isIsogram("kiroca"));
+
+    }
+}
+```
+
+## Exercice 37 Doubler chaque lettre d'un mot
+
+- à partir d'une chaine de caractères
+- Nous devons renvoyer une chaine dans laquelle chaque caractère est doublé
+
+### Exemples (Entrée -> Sortie) :
+
+```java
+* "String"      -> "SSttrriinngg"
+* "Hello World" -> "HHeelllloo  WWoorrlldd"
+* "1234!_ "     -> "11223344!!__  "
+```
+
+## Plan d'action
+
+- initialiser un tableau vide pour stocker les resultats
+- Une chaine sera construite à partir des caractères doublés
+- Parcourir la chaine d'entrée
+- Pour chaque caractère , nous allons l'ajouter deux fois
+- Nous allons renvoyer la chaine doublée
+- Une fois tous les caractères parcourus nous allons retourner le résultat final
+
+## CODE
+
+```java
+public class Solution{
+  public static String doubleChar(String str){
+    // Pour modifier les chaines de caractères nous auront besoin
+    // De StringBuilder
+    StringBuilder resultat_convertit_par_StringBuilder = new StringBuilder();
+
+    // Nous allosn parcourir chaque caractère de la chaine d'entrée
+    for(char instance : str.toCharArray()){
+  // ici à chaque fois d'un element c qui est un caractère est detecté une action se produit
+    // append rajoute un element ici on reprend le nom de chaque instance c
+      resultat_convertit_par_StringBuilder.append(instance).append(instance);
+
+    }
+
+    return resultat_convertit_par_StringBuilder.toString();
+
+
+  }
+}
+```
 
 ![border](../assets/line/line-pink-point_l.png)
 
