@@ -42,7 +42,7 @@
 - [Exercice 30 ](#exercice-30-comparer-les-longueur-min-max-horrible-1)
 - [Exercice 31 ](#exercice-31-)
 - [Exercice 32, triangle de nombres ](#exercice-32-triangle-de-nombres)
-- [Exercice 32, Acronyme d'un nom et prenom avec split](#exercice-33-acronyme-dun-nom-et-prenom-avec-split)
+- [Exercice 33, Acronyme d'un nom et prenom avec split](#exercice-33-acronyme-dun-nom-et-prenom-avec-split)
 
 ## Méthodes utilisées
 
@@ -1578,6 +1578,21 @@ public class AbbreviateTwoWords {
     String resultat = premier_resultat_maj + "." + deuxieme_resultat_maj;
 
       return resultat;
+  }
+}
+```
+
+# Exercice 34 convertir int en toString
+
+Nosu avons besoin d'une fonction capable de transformer un nombre (integer)
+en une chaine de caractères qui est en string
+
+je vais donc convertir mon int ( en java on place le type en premier en String en utilisant toString)
+
+```java
+class Kata {
+  public static String numberToString(int num) {
+    return Integer.toString(num);
   }
 }
 ```
