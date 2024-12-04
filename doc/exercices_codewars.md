@@ -32,7 +32,16 @@
 - [Exercice 19 convertir-en-binaire](#exercice-19-convertir-en-binaire)
 - [Exercice 20 supprime-le-premier-et-le-dernier-caractère](#exercice-20-supprime-le-premier-et-le-dernier-caractère)
 - [Exercice 21 tableau-inversé](#exercice-21-tableau-inversé)
-- [Exercice 22](#exercice-22)
+- [Exercice 23 ](#exercice-22)
+- [Exercice 24 ](#exercice-23-si-pair-even-sinon-odd)
+- [Exercice 25 ](#exercice-24-suppression-des-espaces)
+- [Exercice 26 ](#exercice-26-array-sorts)
+- [Exercice 27 ](#exercice-27)
+- [Exercice 28 ](#exercice-28-chaine-de-lettre-qui-se-répètent)
+- [Exercice 29 ](#exercice-29)
+- [Exercice 30 ](#exercice-30-comparer-les-longueur-min-max-horrible-1)
+- [Exercice 31 ](#exercice-31-)
+- [Exercice 32, triangle de nombres ](#exercice-32-triangle-de-nombres)
 
 ## Méthodes utilisées
 
@@ -1473,6 +1482,75 @@ public class SumArray {
   }
 }
 ```
+
+# Exercice 32 Triangle de nombres:
+
+Étant donné le triangle des nombres impairs consécutifs :
+
+```java
+             1
+          3     5
+       7     9    11
+   13    15    17    19
+21    23    25    27    29
+```
+
+Calculez la somme des nombres de la n -ième ligne de ce triangle (en commençant à l'index 1) par exemple :
+
+( Entrée --> Sortie )
+
+```java
+1 -->  1
+2 --> 3 + 5 = 8
+```
+
+## CODE :
+
+```java
+class RowSumOddNumbers {
+    public static int rowSumOddNumbers(int n) {
+        // La somme des nombres impairs de la n-ième ligne est simplement n^3
+        return n * n * n;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(rowSumOddNumbers(1)); // 1
+        System.out.println(rowSumOddNumbers(2)); // 8
+        System.out.println(rowSumOddNumbers(3)); // 27
+        System.out.println(rowSumOddNumbers(4)); // 64
+    }
+}
+```
+
+## Explication :
+
+Détails supplémentaires sur la formule 𝑛3n3
+
+Récurrence des nombres impairs : Les nombres impairs se suivent dans un triangle où chaque ligne ajoute 𝑛
+n nouveaux éléments. On peut représenter ce triangle comme une suite de nombres impairs.
+
+Somme des n éléments d'une ligne : La formule 𝑛3n3
+provient d'une règle mathématique générale pour la somme des nombres impairs consécutifs dans une structure pyramidale.
+C'est une propriété connue des nombres impairs et des cubes.
+
+Si nous calculons manuellement les sommes des lignes 1, 2, 3, ..., nous obtenons :
+
+```
+Ligne 1 : 1=1 ^3
+
+Ligne 2 : 3+5=8=2 ^^3
+
+Ligne 3 : 7+9+11=27=3 ^3
+
+Ligne 4 : 13+15+17+19=64=4 ^3
+```
+
+Cela montre clairement que la somme des éléments de la ligne n est
+𝑛
+3
+n
+3
+. Cette propriété est ce qui rend la solution simple et élégante.
 
 ---
 
