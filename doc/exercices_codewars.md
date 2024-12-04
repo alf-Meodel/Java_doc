@@ -1597,6 +1597,49 @@ class Kata {
 }
 ```
 
+# Exercice 35 ; inverser mots avec original.split(" ", -1) qui garde l'espace
+
+- Nous devons créer une focntion qui accepte une chaien de caractères au niveau des espace et rajouter -1
+- l'entrée est au format string
+- Nosu devons inverser chaque chaine de caractères les espaces doivent etre conservés
+
+## Plan d'ation
+
+- Nous allons utiliser la **méthode split** pour diviser la chaine en mots
+- Puis nous allons inverser chaque mots en utilisant un **StringBuilder**
+  qui possède une methode **reverse**
+- et enfin nous allons reconstituer la chaine de caractères avec **String.join(" ", ... )**
+- Si la chaine est vide nous devons la retourner telle Quelle
+
+```java
+public class Kata {
+  public static String reverseWords(final String original) {
+    // On crée un tableau qui va contenir tous les mots
+    // on sépare au niveau de l'espace
+    // Mais on rajoute -1 pour le conserver malgré la découpe faite à cet endroit
+    // ainsi -1 eprmet de garder les espaces vides
+
+    String[] tableau_de_mots = original.split(" ", -1);
+
+    // Ensuite, on boucle pour inverser chaque mot du tableau
+    for (int i = 0; i < tableau_de_mots.length; i++) {
+      tableau_de_mots[i] = new StringBuilder(tableau_de_mots[i]).reverse().toString();
+    }
+
+    // On joint les mots inversés en conservant les espaces
+    return String.join(" ", tableau_de_mots);
+  }
+
+  public static void main(String[] args) {
+    // Tests
+    System.out.println(reverseWords("Mon exemple !"));
+
+  }
+}
+```
+
+# Exercice 36
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">
