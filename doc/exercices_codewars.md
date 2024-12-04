@@ -1796,6 +1796,48 @@ public class Codewars {
 
 ## Exercice 38
 
+- Nous devons écrire une fonction permettant de trouver l'indice de masse corporelle
+
+si l'IMC est <= 18.5 le return sera "Underweight"
+
+si l'IMC est<= 25.0 le return sera "Normal"
+
+si l'IMC est <= 30.0 le return sera "Overweight"
+
+si l'IMC est> 30 le return sera "Obese"
+
+### Plan d'action
+
+- pour calculer l'IMC nous devons faire poids / taille²
+- Ensuite nous allons comparer l'IMC calculé avec les lmittes spécifiées
+- Puis on retourne le resultat sous la forme d'une chaine de caractères
+
+### CODE :
+
+```java
+public class Calculate {
+  public static String bmi(double weight, double height) {
+    double imc = weight/ (height * height);
+
+      if(imc <= 18.5){
+        return "Underweight";
+      }else if(imc <= 25.0){
+        return "Normal";
+
+      }else if(imc <= 30.0){
+        return "Overweight";
+
+    }else {
+        return  "Obese";
+      }
+  }
+}
+```
+
+```
+
+```
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">
