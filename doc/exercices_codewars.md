@@ -61,6 +61,7 @@
 - [Split ou comment retirer le elements d'une phrase](#retirer)
 - [Append pour rajoter des caractères à la suite ](#append--pour-rajouter-des-caractères-à-la-suite)
 - [HASHSET : pour supprimer les doublons](#hashset-pour-supprimer-les-doublons)
+- [sum += num : ajout de num à la somme à chaque loop du for](#somme--num)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1749,6 +1750,51 @@ public class Solution{
   }
 }
 ```
+
+## Exercice 37 Doubler chaque lettre d'un mot
+
+- Calculer la somme des éléments du tableau.
+- Déterminer si cette somme est paire ("even") ou impaire ("odd").
+- Retourner "even" ou "odd" selon le cas.
+
+### CODE :
+
+### somme += num;
+
+- Somme valeur de depart qui est un int somme
+  que nous avons déclaré plus haut
+- += est une valeur qu iest ajouté à la valeur somme
+  à chaque fois que notre for boucle
+
+```java
+public class Codewars {
+  public static String oddOrEven (int[] array) {
+  //On initialise une variable pour la somme minimale
+
+    int somme = 0;
+
+    for (int num: array ){
+      // en parcourant le tableau de nombre
+      // pour chaque entité on prend la somme
+      // Puis on lui ajoute un nombre
+
+      somme += num;
+    }
+
+    // Quand la somme est paire on retourne even
+    if(somme % 2 == 0 ){
+      return "even";
+    }else{
+      return "odd";
+    }
+
+
+
+  }
+}
+```
+
+## Exercice 38
 
 ![border](../assets/line/line-pink-point_l.png)
 
