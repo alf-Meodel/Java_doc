@@ -42,6 +42,7 @@
 - [Exercice 30 ](#exercice-30-comparer-les-longueur-min-max-horrible-1)
 - [Exercice 31 ](#exercice-31-)
 - [Exercice 32, triangle de nombres ](#exercice-32-triangle-de-nombres)
+- [Exercice 32, Acronyme d'un nom et prenom avec split](#exercice-33-acronyme-dun-nom-et-prenom-avec-split)
 
 ## Méthodes utilisées
 
@@ -1545,14 +1546,41 @@ Ligne 3 : 7+9+11=27=3 ^3
 Ligne 4 : 13+15+17+19=64=4 ^3
 ```
 
-Cela montre clairement que la somme des éléments de la ligne n est
-𝑛
-3
-n
-3
-. Cette propriété est ce qui rend la solution simple et élégante.
-
 ---
+
+# Exercice 33 acronyme d'un nom et prenom avec split:
+
+- convertir un nom et prenom en initials
+- Le resultat doit etre composé de deux lettres majuscules séparées par un point
+
+```java
+public class AbbreviateTwoWords {
+
+  public static String abbrevName(String name) {
+    //On sépare notre chaine de caractères en plusieurs chaines
+    //En séparant à la hauteur d'un espace
+    //Donc si l'entrée est : Tom Cruise ; on sépare les deux pour
+    //les disposer dans le tableau en position 1 et 2
+    String[] words = name.split(" ");
+
+      //Comme words est un tableau on récupère al première lettre avec le charAt de
+      // la première entrée
+      char premier_mot = words[0].charAt(0);
+    //Ici on récupère la première lettre avec le charAt de deuxieme entrée en
+      char deuxieme_mot = words[1].charAt(0);
+  //Maintenant que nous avons les premiers lettre nous allons les convertir en majuscules
+
+    char premier_resultat_maj = Character.toUpperCase(premier_mot);
+    char deuxieme_resultat_maj = Character.toUpperCase(deuxieme_mot);
+
+    // Puis nous allons créer une variable qui récupère le tout
+
+    String resultat = premier_resultat_maj + "." + deuxieme_resultat_maj;
+
+      return resultat;
+  }
+}
+```
 
 ![border](../assets/line/line-pink-point_l.png)
 
