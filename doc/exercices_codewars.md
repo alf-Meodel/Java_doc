@@ -1794,7 +1794,7 @@ public class Codewars {
 }
 ```
 
-## Exercice 38
+## Exercice 38 une histoire d'IMC
 
 - Nous devons écrire une fonction permettant de trouver l'indice de masse corporelle
 
@@ -1837,6 +1837,71 @@ public class Calculate {
 ```
 
 ```
+
+## Exercice 38 liste avec valeur min valeur max
+
+## Consignes :
+
+- Créer deux focntions max et min
+- Qui recoivent une liste d'entiers en entrée
+- Et renvoient respectivement le plus grand et le plus petit nombre de cette liste
+- Chaque focntion renvoie un nombre
+
+## Exemples (Entrée -> Sortie)
+
+```
+* [4,6,2,1,9,63,-134,566]         -> max = 566, min = -134
+* [-52, 56, 30, 29, -54, 0, -110] -> min = -110, max = 56
+* [42, 54, 65, 87, 0]             -> min = 0, max = 87
+* [5]                             -> min = 5, max = 5
+```
+
+CODE :
+
+```java
+public class Kata {
+
+
+  //Ici nous allons retourner le minimum de la liste
+  //la valeur d'entrée est un tableau
+  public int min(int[] list) {
+    //a partir de ce tableau ( en int)
+    // on initialise le minimum de la liste
+    int min = list[0];
+    //Puis nous allons parcourir le tableau pour trouver le minimum
+
+    for(int element_liste : list){
+      // Si un element de la liste est est inférieur à la valeur min
+      if(element_liste<min){
+        // il devient la nouvelle valeur min
+        min=element_liste;
+      }
+    }
+
+    return min;
+
+  }
+
+  public int max(int[] list) {
+    // la cherche du max commence à la premiere case du tableau
+    int max = list[0];
+
+    // puis on poursuit les recherches avec un for
+    // qui va parcourir chaque 39
+    for (int instance_liste : list){
+      //si un element est supérieur à la valeur max on la stocke
+
+     if(instance_liste > max){
+       max = instance_liste;
+     }
+
+    return max;
+
+  }
+}
+```
+
+## Exercice 39
 
 ![border](../assets/line/line-pink-point_l.png)
 
