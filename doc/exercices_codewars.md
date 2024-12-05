@@ -2340,7 +2340,7 @@ public class Kata {
 }
 ```
 
-## Exercice 54
+## Exercice 54 jeu 2D de dés Déplacement
 
 ### Consignes
 
@@ -2361,6 +2361,61 @@ public class Move {
       // - et renvoie la nouvelle position
 
       return position + 2 * roll;
+    }
+}
+```
+
+## Exercice 55
+
+### Integer.MAX_VALUE et Integer.MIN_VALUE en Java avec des exemples
+
+Dernière mise à jour : 22 janvier 2020
+La plupart du temps, dans la programmation compétitive , il est nécessaire d'assigner à la variable la valeur maximale ou minimale que le type de données peut contenir, mais se souvenir d'un nombre aussi grand et précis s'avère être une tâche difficile. Par conséquent, Java dispose de constantes pour représenter ces nombres, de sorte que ceux-ci peuvent être directement assignés à la variable sans avoir à saisir le nombre entier.
+
+Prenez un tableau et supprimez chaque deuxième élément du tableau. Conservez toujours le premier élément et commencez à supprimer l'élément suivant.
+
+### Exemple:
+
+```
+["Keep", "Remove", "Keep", "Remove", "Keep", ...]-->["Keep", "Keep", "Keep", ...]
+```
+
+Aucun des tableaux ne sera vide, vous n’avez donc pas à vous en soucier !
+
+---
+
+### CODE
+
+```java
+public class Kata {
+    public static int sum(int[] tableau_numbers) {
+        // Vérification si le tableau est null ou a un seul élément
+        if (tableau_numbers == null || tableau_numbers.length <= 1) {
+            return 0;
+        }
+        // Somme totale
+        int somme_totale = 0;
+        // Initialisation des valeurs min et max
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        // Parcourir chaque élément du tableau
+        for (int element_number : tableau_numbers) {
+            // Ajouter l'élément à la somme totale
+            somme_totale += element_number;
+
+            // Trouver le maximum
+            if (element_number > max) {
+                max = element_number;
+            }
+
+            // Trouver le minimum
+            if (element_number < min) {
+                min = element_number;
+            }
+        }
+        // Retourner la somme totale en excluant le min et le max
+        return somme_totale - max - min;
     }
 }
 ```
