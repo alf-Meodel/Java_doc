@@ -2420,6 +2420,56 @@ public class Kata {
 }
 ```
 
+## Exercice 56
+
+CONSIGNES :
+
+Étant donné un tableau d’entiers.
+
+Renvoie un tableau, où le premier élément est le nombre de nombres positifs et le deuxième élément est la somme de nombres négatifs. 0 n'est ni positif ni négatif.
+
+Si l'entrée est un tableau vide ou est nulle, renvoie un tableau vide.
+
+Exemple
+Pour la saisie [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], vous devez renvoyer [10, -65].
+
+### CODE :
+
+```java
+public class Kata
+{
+    public static int[] countPositivesSumNegatives(int[] input)
+    {
+
+      // - renvoyer le nombre positifs
+      // - renvoyer la somme de nombres négatifs
+      // - 0 ni positif ni négatif
+      // - si vide ou nul ; o nrenvoi un tableau vide
+
+      if( input == null || input.length == 0){
+//on retourne un tableau à deux bulles
+        // nouveau tableau int {} > sans rien dedans
+        return new int[]{};
+      }
+
+      //nombre positifs et négatifs
+
+      int nombre_positifs = 0;
+      int somme_des_negatifs = 0;
+
+      for(int element_number :input){
+        if(element_number>0){
+          nombre_positifs++;
+        }else if (element_number <0){
+          somme_des_negatifs += element_number;
+        }
+      }
+      return new int[]{nombre_positifs, somme_des_negatifs};
+
+    }
+}
+```
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">
