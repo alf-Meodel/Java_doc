@@ -63,6 +63,8 @@
 - [HASHSET : pour supprimer les doublons](#hashset-pour-supprimer-les-doublons)
 - [sum += num : ajout de num à la somme à chaque loop du for](#somme--num)
 - [Replace ALL](#replace-all)
+- [METHODE CONTAINS](#methode-contains)
+- [Array as List](#arraysaslist)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1988,7 +1990,109 @@ public class Solution {
       return s.split(" ");
     }
 }
+
 ```
+
+## Exercice 42 initier une carte pour stoquer les resultats
+
+## Consignes :
+
+Vous demandez à une petite fille : « Quel âge as-tu ? » Elle répond toujours : « x ans », où x est un nombre aléatoire entre 0 et 9.
+
+Écrivez un programme qui renvoie l’âge de la fille (0-9) sous forme d’entier.
+
+Supposons que la chaîne d'entrée de test soit toujours une chaîne valide. Par exemple, l'entrée de test peut être « 1 an » ou « 5 ans ». Le premier caractère de la chaîne est toujours un nombre.
+
+## Plan d'action :
+
+- **Entrée** : réponse de la petite fille : "« x ans », où x est un nombre aléatoire entre 0 et 9."
+
+- retourner l'age de la fille sous la forme d'entier
+- Donc sans prendre en compte le texte
+
+```java
+public class CharProblem {
+  public static int howOld(final String herOld) {
+
+
+         return Character.getNumericValue(herOld.charAt(0));
+  }
+  public static void main (String[] args){
+    System.out.println("2 year");
+  }
+}
+```
+
+## Exercice 43 addition de nomrbes positifs
+
+### Tâche
+
+Vous obtenez un tableau de nombres et renvoyez la somme de tous les nombres positifs.
+S'il n'y a rien à additionner, la somme par défaut est 0.
+
+```java
+public class Positive{
+  public static int sum(int[] liste_de_nombres) {
+    // Au debut le total est de zero
+    // c'est notre point de départ
+
+        int total = 0;
+
+        for (int element : liste_de_nombres) {
+            if (element > 0) {
+                total += element;
+            }
+        }
+
+        return total;
+    }
+}
+```
+
+## Exercice 44 Conversion de la vitesse du cafard
+
+### Consignes :
+
+Le cafard est l'un des insectes les plus rapides. Écrivez une fonction qui prend sa vitesse en km par heure et la renvoie en cm par seconde, arrondie à l'entier inférieur (= floored).
+
+```java
+public class Cockroach{
+  public int cockroachSpeed(double x){
+//     entrée km/heure > cm/secondes arrondis à l'entier inférieur .floor
+    double total = x*100000/3600;
+    return (int) Math.floor(total);
+//       double total = x * 100000 / 3600;
+
+//         return (int) Math.floor(total);
+
+  }
+}
+```
+
+## Exercice 45 vérifier si un objet est présent dans une liste
+
+### Arrays.asList()
+
+- La methode Array.asList est une methode utilitaire de java qui convertis un tableau en Liste
+
+### Methode Contains
+
+- La methode contains APPARTIENT à une methode "List" ou d'auters formes de List comme "ArrayList"
+- elle vérifie si un element est présent dans la liste
+
+```java
+
+import java.util.Arrays;
+public class Solution {
+ public static boolean check(Object[] a, Object x) {
+
+   //On retourne la liste Object[] ou Arrays; sous la forme d'une liste ( as List) qui contient x ;
+        return Arrays.asList(a).contains(x);
+    }
+}
+```
+
+## Exercice 46
 
 ![border](../assets/line/line-pink-point_l.png)
 
