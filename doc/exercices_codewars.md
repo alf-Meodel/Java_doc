@@ -2246,6 +2246,102 @@ class Kata {
 }
 ```
 
+## Exercice 51 playing banjo ? charAt == "R"
+
+## Consigne :
+
+Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+
+The function takes a name as its only argument, and returns one of the following strings:
+
+```
+name + " plays banjo"
+name + " does not play banjo"
+Names given are always valid strings.
+```
+
+## CODE :
+
+```java
+public class Banjo {
+  public static String areYouPlayingBanjo(String name) {
+    // - Creer un question qui demande "jouez vous du banjo"
+    // - Si le nom en entrée commence avec la lettre R ou une lower case r vosu jouez du banjo
+    if(name.charAt(0) == 'R' || name.charAt(0) == 'r'){
+      return name + " plays banjo";
+
+    }else{
+      return name + " does not play banjo";
+    }
+  }
+}
+```
+
+## Exercice 52 une histoire de triangle
+
+### Explication de L'inégalité triangulaire :
+
+Pour que trois côtés abc puissent former un triangle, les conditions suivantes doivent être respectées :
+
+- a + b > c
+
+- a + c > b
+
+- b + c > a
+
+### Ces trois inégalités signifient que :
+
+- La somme de deux côtés doit toujours être strictement supérieure au troisième côté.
+- Si une des inégalités n'est pas satisfaite, les segments ne peuvent pas se connecter pour former un triangle (ils seront trop courts ou alignés sur une ligne droite).
+
+```java
+class TriangleTester{
+  public static boolean isTriangle(int a, int b, int c){
+
+    // - Renvoie true si un triangle peut etre cinstruit avec des cotés de longueur donnée
+    // - False si les valeur ne peuvent créer de triangle
+    // - Les triangles doivent avoir une surface suppérieur à zero pour être acceptés
+
+    if(a <= 0 || b <= 0 || c <= 0){
+      return false;
+    }
+
+    // puis on verifie que la valeur de deux cotés sont supérieur à la valeur du troisième coté
+    return (a + b > c ) && (a + c > b) && (b + c > a);
+
+  }
+}
+```
+
+## Exercice 53 inverser tableau de nombres
+
+### Consigne : Renvoyer l'inverse des nombres
+
+Étant donné un ensemble de nombres, renvoyez l'inverse additif de chacun. Chaque nombre positif devient négatif, et les nombres négatifs deviennent positifs.
+
+```
+[1, 2, 3, 4, 5] --> [-1, -2, -3, -4, -5]
+```
+
+```java
+public class Kata {
+ public static int[] invert(int[] elements) {
+   // on crée un espace mémoire pour stocker un nouveau tableau
+        int[] tableau_inverse = new int[elements.length];
+
+        for (int i = 0; i < elements.length; i++) {
+          // Inverser le signe de chaque élément
+            tableau_inverse[i] = -elements[i];
+        }
+
+        return tableau_inverse;
+    }
+}
+```
+
+## Exercice 54
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">
