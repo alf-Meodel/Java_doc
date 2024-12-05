@@ -2229,19 +2229,19 @@ Use conditionals to return the proper message:
 ```java
 class Kata {
     static String greet(String name, String owner) {
-
-        // Déterminer si name correspond à owner
+        // ici on utilise un ternaire
+      //  le nom est égal à celui de owner ?
+      // alors on l'appelle boss
+      // Sinon nous l'appelons guest
         switch (name.equals(owner) ? "boss" : "guest") {
             case "boss":
                 return "Hello boss";
             case "guest":
                 return "Hello guest";
             default:
-                return ""; // Ce cas ne se produira jamais
-
+            // ne pas oublier le default qui ne retourne rien si autre
+                return "";
     }
-
-
     }
 }
 ```
