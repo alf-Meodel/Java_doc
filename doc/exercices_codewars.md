@@ -2115,9 +2115,9 @@ public class Kata
 {
   public static String switchItUp(int number)
   {
-
     // if number 0 >>> 9 === renvoyer en lettre
-    switch (number) {
+switch (number) {
+  case 0:      return "Zero";
   case 1:      return "One";
   case 2:  return "Two";
   case 3:  return "Three";
@@ -2127,12 +2127,122 @@ public class Kata
   case 7:  return "Seven";
   case 8:  return "Eight";
   case 9:  return "Nine" ;
-
-  default: return "You're not 1, 2, 3 or 4!";
+default: return "You're not 1, 2, 3 or 4!";
 }
-
-
   }
+}
+```
+
+## Exercice 47 Multiplication des elements dans un tableau
+
+##### CONSIGNES :
+
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+`[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24`
+
+#### Explications :
+
+```
+    int [] result = new int[n];
+```
+
+#### int[] result :
+
+Cela déclare une variable nommée **result de type tableau d'entiers (int[])**.
+
+#### new int[n] :
+Cela crée un nouveau tableau de taille n.
+**Chaque case du tableau est initialisée avec la valeur par défaut pour les entiers, qui est 0.**
+
+```java
+public class Kata{
+  public static int grow(int[] tableau_de_nombres) {
+        // Initialiser le résultat à 1 (neutre pour la multiplication)
+        int result = 1;
+        // Parcourir le tableau et multiplier chaque valeur au résultat
+        for (int element : tableau_de_nombres) {
+            result *= element;
+        }
+        // Retourner le produit final
+        return result;
+    }
+}
+```
+
+## Exercice 48 une Histoire de Hoola Hoopss
+
+Alex vient de recevoir un nouveau hula hoop, il l'adore mais se sent découragé car son petit frère est meilleur que lui.
+
+Écrivez un programme dans lequel Alex peut saisir ( n) combien de fois le cerceau fait le tour et il lui renverra un message d'encouragement :
+
+- Si Alex obtient 10 cerceaux ou plus, renvoyez la chaîne "Great, now move on to tricks".
+- S'il n'obtient pas 10 cerceaux, renvoyez la corde "Keep at it until you get it".
+
+```java
+public class HelpAlex{
+  public static String hoopCount(int n) {
+        if (n >= 10) {
+            return "Great, now move on to tricks";
+        } else {
+            return "Keep at it until you get it";
+        }
+  }
+}
+```
+
+## Exercice 49 une Histoire de Hoola Hoopss
+
+```
+Écrivez une fonction qui renvoie la surface totale et le volume d'une boîte sous forme de tableau :[area, volume]
+```
+
+```java
+public class Kata {
+    public static int[] getSize(int w,int h,int d) {
+        // renvoi la surface totale
+        // et le volume sous la forme d'un tableau
+      // Un parallélépipède rectangle a 6 faces :
+      // - Deux faces de dimensions largeur × hauteur (w * h)
+    //- Deux faces de dimensions hauteur × profondeur (h*d)
+    // - Deux faces de dimensions largeur × profondeur (w*d)
+
+      int area = 2 * (w * h + h * d + w * d);
+
+        // Calculer le volume
+        int volume = w * h * d;
+
+        // on retourne un tableau de nombres qui prend en compte {area, volume}
+        return new int[]{area, volume};
+    }
+}
+```
+
+## Exercice 50 Switch case et Ternaire
+
+#### Consignes :
+
+Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+
+Use conditionals to return the proper message:
+
+```java
+class Kata {
+    static String greet(String name, String owner) {
+
+        // Déterminer si name correspond à owner
+        switch (name.equals(owner) ? "boss" : "guest") {
+            case "boss":
+                return "Hello boss";
+            case "guest":
+                return "Hello guest";
+            default:
+                return ""; // Ce cas ne se produira jamais
+
+    }
+
+
+    }
 }
 ```
 
