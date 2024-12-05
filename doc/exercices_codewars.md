@@ -65,6 +65,7 @@
 - [Replace ALL](#replace-all)
 - [METHODE CONTAINS](#methode-contains)
 - [Array as List](#arraysaslist)
+- [Switch case](#switch-case-)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -2092,7 +2093,48 @@ public class Solution {
 }
 ```
 
-## Exercice 46
+## Exercice 46 SWITCH CASE si 1-9 convertir en texte
+
+### SWITCH CASE :
+
+Un switch en Java est une structure de contrôle utilisée pour effectuer différentes actions basées sur la valeur d'une variable. Elle compare la variable avec des case définis, et exécute le bloc correspondant. **Le mot-clé break** termine un cas. Une option default gère les valeurs non prévues.
+
+## Consignes :
+
+- Nosu allons utiliser un switch case pour récupérer la valeur d'entrée et en focntion des nombres saisis ; si un des nombres est 1-2-3-4-5-6-7-8-9 alors on retourne un peu de texte qui est le decsriptif du nombre en toute lettre
+
+```
+Input: 1
+Output: "One".
+```
+
+If your language supports it, try using a switch statement.
+
+```java
+public class Kata
+{
+  public static String switchItUp(int number)
+  {
+
+    // if number 0 >>> 9 === renvoyer en lettre
+    switch (number) {
+  case 1:      return "One";
+  case 2:  return "Two";
+  case 3:  return "Three";
+  case 4:  return "Four";
+  case 5:  return "Five" ;
+  case 6:  return "Six";
+  case 7:  return "Seven";
+  case 8:  return "Eight";
+  case 9:  return "Nine" ;
+
+  default: return "You're not 1, 2, 3 or 4!";
+}
+
+
+  }
+}
+```
 
 ![border](../assets/line/line-pink-point_l.png)
 
