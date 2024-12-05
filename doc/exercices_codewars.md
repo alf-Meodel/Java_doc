@@ -62,6 +62,7 @@
 - [Append pour rajoter des caractères à la suite ](#append--pour-rajouter-des-caractères-à-la-suite)
 - [HASHSET : pour supprimer les doublons](#hashset-pour-supprimer-les-doublons)
 - [sum += num : ajout de num à la somme à chaque loop du for](#somme--num)
+- [Replace ALL](#replace-all)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -1860,8 +1861,6 @@ CODE :
 
 ```java
 public class Kata {
-
-
   //Ici nous allons retourner le minimum de la liste
   //la valeur d'entrée est un tableau
   public int min(int[] list) {
@@ -1901,7 +1900,95 @@ public class Kata {
 }
 ```
 
-## Exercice 39
+## Exercice 39 facile de l'enfer
+
+Créez une méthode qui prend en entrée un nom, une ville et un état pour accueillir une personne. Notez qu'il names'agira d'un tableau composé d'une ou plusieurs valeurs qui doivent être jointes par un espace entre chacune, et la longueur du nametableau dans les cas de test variera.
+
+## Exemple:
+
+```java
+['John', 'Smith'], 'Phoenix', 'Arizona'
+```
+
+Cet exemple renverra la chaîneHello, John Smith! Welcome to Phoenix, Arizona!
+
+## CODE :
+
+```java
+public class Hello {
+    public String sayHello(String[] name, String city, String state) {
+        // On combine les element que l'on recoit en ajoutant un espace avant name
+
+        String fullName = String.join(" ", name);
+
+       // Puis on retourne le tout en incluant la variable fullName
+        return "Hello, " + fullName + "! Welcome to " + city + ", " + state + "!";
+    }
+}
+```
+
+## Exercice 40 REMPLACER DES MOTS PAR D'AUTRES
+
+## Replace all
+
+La méthode replaceAll() retourne une nouvelle chaîne de caractères dans laquelle toutes les occurrences d'un motif donné ont été remplacées par une chaîne de remplacement.
+
+#### Deux arguments
+
+1. les valeurs qui seront remplacées
+2. Les valeurs de remplacement
+
+```
+const paragraph = "I think Ruth's dog is cuter than your dog!";
+console.log(paragraph.replaceAll('dog', 'monkey'));
+```
+
+```
+Expected output: "I think Ruth's monkey is cuter than your monkey!"
+```
+
+## Consignes :
+
+- Remplacez toutes les voyelles par un point d'exclamation dans la phrase. aeiouAEIOUest une voyelle.
+- Nous allons récupérer notre valeur **d'entrée** et utiliser **replaceAll** pour donner
+  1. les valeurs qui seront remplacées
+  2. Les valeurs de remplacement
+
+```java
+public class Solution {
+    public static String replace(final String s) {
+        // Remplace toutes les voyelles (majuscules et minuscules) par un point d'exclamation
+        return s.replaceAll("[aeiouAEIOU]", "!");
+    }
+```
+
+## Exercice 41 Séparer deux mots d'une chaine de caractère
+
+Write a function to split a string and convert it into an array of words.
+
+```
+Examples (Input ==> Output):
+"Robin Singh" ==> ["Robin", "Singh"]
+
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+```
+
+- Separer = SPLIT
+- Pour séparer les deux mots d'une chaine de caractère
+- Nous allons utiliser SPLIT en indiquant à quel moment la séparation à lieu
+
+```java
+public class Solution {
+
+    public static String[] stringToArray(String s) {
+      // Il faut créer une focntion poru séparer deux mots d'une chaine de caractères
+      // POUR SEPARER DES CHAINES DE CARACTERES il faut utiliser SPLIT en indiquant à quel moment séparer les mots
+      // Ici au niveau des espaces
+
+      return s.split(" ");
+    }
+}
+```
 
 ![border](../assets/line/line-pink-point_l.png)
 
