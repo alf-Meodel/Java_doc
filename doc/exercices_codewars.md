@@ -2342,6 +2342,29 @@ public class Kata {
 
 ## Exercice 54
 
+### Consignes
+
+Fonction de déplacement du jeu terminal
+Dans ce jeu, le héros se déplace de gauche à droite. Le joueur lance le dé et se déplace du nombre de cases indiqué par le dé deux fois .
+
+Créez une fonction pour le jeu terminal qui prend la position actuelle du héros et le jet (1-6) et renvoie la nouvelle position
+
+## CODE :
+
+```java
+public class Move {
+    public static int move(int position, int roll) {
+        //- deplacement de gauche à droite
+          // - le joueur lance le dé et se déplace x2 le resultat du dé (1-6)
+      /////////////////////////////////////////////////////////////////
+      // - Créer une focntion qui prend la position actuelle du héros et le jet (1-6)
+      // - et renvoie la nouvelle position
+
+      return position + 2 * roll;
+    }
+}
+```
+
 ![border](../assets/line/line-pink-point_l.png)
 
 <a href="#sommaire">
