@@ -12,6 +12,12 @@
 
 - [Definiton](#definition-)
 - [Cas Pratique](#cas-pratique-)
+  - [Creation de la classe parent](#creation-dune-classe-parent)
+  - [Creation de la classe enfant](#creation-dune-classe-enfant-)
+  - [Modification de la methode main](#modification-de-la-methode-main)
+  - [Utiliser les super](#utiliser-les-super)
+  - [Override](#override)
+  - [Ajouter une autre classe enfant](#ajouter-une-autre-classe-enfant)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -169,6 +175,8 @@ Rex is eating
 Dog is eating noisily.
 Rex is barking.
 ```
+
+## Ajouter une autre classe Enfant
 
 ![border](../assets/line/line-pink-point_r.png)
 
