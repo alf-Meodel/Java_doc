@@ -12,12 +12,12 @@
 
 - [Definiton](#definition-)
 - [Cas Pratique](#cas-pratique-)
-  - [Creation de la classe parent](#creation-dune-classe-parent)
-  - [Creation de la classe enfant](#creation-dune-classe-enfant-)
+  - [Creation de la classe parent animal](#creation-dune-classe-parent)
+  - [Creation de la classe enfant dog](#creation-dune-classe-enfant-)
   - [Modification de la methode main](#modification-de-la-methode-main)
   - [Utiliser les super](#utiliser-les-super)
   - [Override](#override)
-  - [Ajouter une autre classe enfant](#ajouter-une-autre-classe-enfant)
+  - [Ajouter une autre classe enfant cat](#ajouter-une-autre-classe-enfant-cat)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -85,9 +85,15 @@ Rex is Barking
 
 # Utiliser les Super
 
-- Dans un premier temps nous allons ajouter un constructeur pour la classe **Animal (le parent)** et nosu allons utiliser **Super dans dog**
+### Tips Imagé
+
+- Nosu pourrions utilsier un super avec une classe croissant de base qui aurait un certain cout ;
+- Le but etant de ne pas se repeter **DRY** `Dont repeat yourself`
+- en supposant que nous avons un croissant avec des pepites de chocolart nosu allosn passer par un super pour récupérer le calcul du prix de base pour lui ajouter les pepites de chocolat
 
 #### 1/ Ajout d'un constructeur à Animal
+
+- Dans un premier temps nous allons ajouter un constructeur pour la classe **Animal (le parent)** et nosu allons utiliser **Super dans dog**
 
 - Mais quelques erreurs apparaissent dans noter code à ce niveau ;
 - 1 usage 1 inheritor related problem
@@ -131,6 +137,37 @@ myDog.bark();
 ```
 
 - Ainsi le code fonctionne correctement nous avons uilisé le constructeur ( à travers les chamsp de paramètres de la classe Dog que nous avons appellé ; en appelant name de this.name )
+
+---
+
+### Pourquoi utiliser super ?
+
+##### Approche 1 : Modifier l'attribut name directement après avoir créé l'objet
+
+```java
+Dog myDog = new Dog();
+myDog.name = "Rex";
+```
+
+##### Approche 2 : Passer name en paramètre au constructeur
+
+```java
+Dog myDog = new Dog("Rex");
+```
+
+### Différence clé : Gestion de l’initialisation
+
+##### Avec affectation directe (myDog.name = "Rex")
+
+- L’attribut est modifiable à tout moment.
+- L’objet est créé sans valeur pour name et reste dans un état partiellement initialisé jusqu’à ce que vous affectiez une valeur.
+
+##### Avec un constructeur (new Dog("Rex"))
+
+- L’attribut est initialisé dès la création de l’objet.
+- L’objet est immédiatement complet et prêt à être utilisé.
+
+---
 
 # Override
 
@@ -176,9 +213,53 @@ Dog is eating noisily.
 Rex is barking.
 ```
 
-## Ajouter une autre classe Enfant
+## Ajouter une autre classe Enfant CAT
 
-![border](../assets/line/line-pink-point_r.png)
+- Nous allons ajouter une nouvelle classe CAT afin d'explorer les differences
+
+- Dnas un premier temps nous allons ajouter un super comme pour l'exemple **de dog >>** afin de retrouver directement les parametres
+
+```java
+   Dog myDog = new Dog();
+        myDog.name = "Rex";
+        // est Héritée de la classe Parent
+        ----------------------------
+          Dog myDog = new Dog("Rex");
+
+```
+
+Excellente question ! Analysons en détail les deux approches pour comprendre ce qui se passe dans chacune :
+
+- Puis dans le main nous allons ajouter la methode Cat ( attention les simple quotes ne focntionnent pas )
+
+```java
+ Cat myCat = new Cat("Whiskers");
+        myCat.eat();
+        myCat.meow();
+```
+
+- De cette facon :
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog =  new Dog("Rex");
+        // Ainsi nous pouvons utiliser directement dans l'enfant dog
+        // Les METHODES HERITEES de ANIMAL
+        // myDog.name = "Rex";
+        // Parent
+        myDog.eat();
+        // Enfant
+        myDog.bark();
+
+        Cat myCat = new Cat("Whiskers");
+        myCat.eat();
+        myCat.meow();
+    }
+}
+```
+
+![border](../assets/line/line-pink-point_r.png);
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
