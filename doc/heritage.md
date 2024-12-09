@@ -77,7 +77,7 @@ Rex is eating
 Rex is Barking
 ```
 
-## Utiliser les Super
+# Utiliser les Super
 
 - Dans un premier temps nous allons ajouter un constructeur pour la classe **Animal (le parent)** et nosu allons utiliser **Super dans dog**
 
@@ -125,6 +125,50 @@ myDog.bark();
 ```
 
 - Ainsi le code fonctionne correctement nous avons uilisé le constructeur ( à travers les chamsp de paramètres de la classe Dog que nous avons appellé ; en appelant name de this.name )
+
+# Override
+
+Explorons comment remplacer (override) une méthode et ajouter des méthodes spécifiques dans l’enfant.
+
+## Tips visuel
+
+- Si une classe Parent vehicule possède la methode **rouler** et que nous désirons utilsier un avion la méthode sera override pour permettre **voler**
+
+### Ajouter un comportement personnalisé dans Dog
+
+- Alors pour rajouter un override nous allons directement sur la **classe enfant** qui nécessite un ajustement
+
+```java
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name); // Appelle le constructeur de Animal
+    }
+    // OVERRIDE sur eat car ici Dog va manger differemment
+    // on récupère donc la methode du parent afin de CREER
+    // Une VERSION CUSTOM
+    // au sein de la classe ciblé ici DOG enfant de ANIMAL
+    @Override
+    void eat() {
+        // Appelle la méthode de Animal
+        super.eat();
+        System.out.println("Dog is eating noisily.");
+    }
+
+    void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+```
+
+- Puis nous allons modifier **le main** pour voir les changements ( aucun changements à ce niveau on y va seulement pour lancer le **run** )
+
+- Ainsi nous auront la sortie suivante :
+
+```java
+Rex is eating
+Dog is eating noisily.
+Rex is barking.
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 
