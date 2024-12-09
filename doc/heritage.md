@@ -77,6 +77,55 @@ Rex is eating
 Rex is Barking
 ```
 
+## Utiliser les Super
+
+- Dans un premier temps nous allons ajouter un constructeur pour la classe **Animal (le parent)** et nosu allons utiliser **Super dans dog**
+
+#### 1/ Ajout d'un constructeur à Animal
+
+- Mais quelques erreurs apparaissent dans noter code à ce niveau ;
+- 1 usage 1 inheritor related problem
+
+```java
+public class Animal{ // 1 usage 1 inheritor related problem
+    String name;
+    // Constructeur dan le quel nous allons prendre les attributs
+    // afin de les "lister"
+
+    public Animal(String name) { // !!!!! no usages 1 related problem
+        this.name = name;
+    }
+    void eat(){
+        System.out.println(name + " is eating");
+    }
+}
+```
+
+- Puis nous allons retourner dans la methode main mais nous constatons que Dog() signale un problème
+
+```java
+      Dog myDog =  new Dog();
+```
+
+- Ainsi nosu allons intégrer directement dans les paramètres
+
+```java
+public class Main {
+    public static void main(String[] args) {
+      Dog myDog =  new Dog("Rex");
+    //Ainsi nous pouvons utiliser directement dans l'enfant dog
+    // Les METHODES heritées de ANIMAL
+    // myDog.name = "Rex";
+    //Parent
+myDog.eat();
+//Enfant
+myDog.bark();
+    }
+}
+```
+
+- Ainsi le code fonctionne correctement nous avons uilisé le constructeur ( à travers les chamsp de paramètres de la classe Dog que nous avons appellé ; en appelant name de this.name )
+
 ![border](../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire">
