@@ -35,9 +35,24 @@
   - [x] Constructeurs
   - [x] Encapsulation et modificateurs d'accès (public, private, protected)
 
-- [ ] Exercices pratiques
-  - [ ] Créer une classe simple avec des attributs et des méthodes
-  - [ ] Instancier des objets et appeler des méthodes
+- [x] Exercices pratiques
+  - [x] Créer une classe simple avec des attributs et des méthodes
+  - [x] Instancier des objets et appeler des méthodes
+
+## Lundi 09/12/2024 :
+
+### Programmation Orientée Objet - Concepts avancés
+
+- [ ] Étudier le concept d'héritage
+  - [ ] Fonctionnement du mode parent/enfant
+  - [ ] Utilisation du mot clé super
+  - [ ] Fonctionnalités étendues entre un parent et un enfant
+- [ ] Analyse du concept de polymorphisme
+  - [ ] Méthode commune
+  - [ ] Surcharge
+- Apprentissage des relations possibles entre les classes
+  - [ ] Association
+  - [ ] Composition
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">

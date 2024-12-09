@@ -17,6 +17,7 @@
 - [Benchmark JAVA/NEST](./doc/benchmark.md)
 - [Les differents types en JAVA](./doc/java_type.md)
 - [Les dailys](./doc/dailys.md)
+- [L'heritage](/doc/heritage.md)
 
 ![border](./assets/line/border_deco_rb.png)
 
