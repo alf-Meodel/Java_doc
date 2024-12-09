@@ -12,16 +12,19 @@
 
 - [Definiton](#definition-)
 - [Cas Pratique](#cas-pratique-)
+
   - [Creation de la classe parent animal](#creation-dune-classe-parent)
   - [Creation de la classe enfant dog](#creation-dune-classe-enfant-)
   - [Modification de la methode main](#modification-de-la-methode-main)
-  - [Utiliser les super](#utiliser-les-super)
-  - [Override](#override)
-  - [Ajouter une autre classe enfant cat](#ajouter-une-autre-classe-enfant-cat)
+
+  - [Polymorphisme](#le-polymorphisme)
+    - [Utiliser les super](#utiliser-les-super)
+    - [Override](#override)
+    - [Ajouter une autre classe enfant cat](#ajouter-une-autre-classe-enfant-cat)
 
 ![border](../assets/line/border_deco_rb.png)
 
-# Definition :
+## Definition :
 
 L'héritage en Java permet à une classe enfant (ou classe dérivée) de réutiliser les attributs et méthodes d'une classe parent (ou classe de base).
 
@@ -83,9 +86,9 @@ Rex is eating
 Rex is Barking
 ```
 
-# Utiliser les Super
+## Utiliser les Super
 
-### Tips Imagé
+#### Tips Imagé
 
 - Nosu pourrions utilsier un super avec une classe croissant de base qui aurait un certain cout ;
 - Le but etant de ne pas se repeter **DRY** `Dont repeat yourself`
@@ -168,6 +171,15 @@ Dog myDog = new Dog("Rex");
 - L’objet est immédiatement complet et prêt à être utilisé.
 
 ---
+
+# POLYMORPHISME
+
+### Qu’est-ce que le polymorphisme ?
+
+Le polymorphisme signifie "plusieurs formes". En Java, cela permet d’utiliser une méthode ou un objet de différentes manières selon le contexte.
+
+- **Polymorphisme par redéfinition (Override) :** Une classe enfant peut redéfinir une méthode de la classe parent avec un comportement différent.
+- **Polymorphisme par surcharge (Overloading) :** Une méthode dans une même classe peut être définie plusieurs fois avec des paramètres différents.
 
 # Override
 
@@ -258,6 +270,26 @@ public class Main {
     }
 }
 ```
+
+### Difference entre heritage association composition agrégation :
+
+| **Critère**            | **Héritage**                                                                       | **Association**                                                            | **Composition**                                                                                     | **Agrégation**                                                                                              |
+| ---------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Relation**           | Relation "est un" (is-a)                                                           | Relation "utilise/travaille avec"                                          | Relation "fait partie de"                                                                           | Relation "a un" (has-a), mais avec moins de dépendance.                                                     |
+| **Dépendance**         | La classe enfant dépend de la classe parent et hérite de ses comportements.        | Les objets liés peuvent exister indépendamment.                            | L'objet "contenu" ne peut pas exister sans l'objet "contenant".                                     | Les objets liés peuvent exister indépendamment mais sont fortement associés pour une durée.                 |
+| **Durée de vie**       | La classe parent et la classe enfant ont des cycles de vie liés par la hiérarchie. | Les objets ont des cycles de vie indépendants.                             | L'objet "contenu" est détruit si l'objet "contenant" est détruit.                                   | L’objet agrégé peut survivre indépendamment, mais une relation forte existe pendant leur association.       |
+| **Représentation UML** | Représentée par une flèche simple pointant vers la classe parent.                  | Représentée par une ligne simple entre les deux classes.                   | Représentée par une ligne avec un losange rempli du côté du contenant.                              | Représentée par une ligne avec un losange vide du côté du contenant.                                        |
+| **Exemple pratique**   | Une `Dog` est un `Animal` et hérite des attributs/méthodes d’`Animal`.             | Un `Dog` peut avoir un `Owner`, mais l'`Owner` peut exister sans le `Dog`. | Un `Animal` possède un `Heart`, et le `Heart` n’a pas de sens sans l’`Animal`.                      | Une `School` a plusieurs `Students`, mais les `Students` peuvent exister sans la `School`.                  |
+| **Code typique**       | Utilisation du mot-clé `extends` pour définir une classe enfant.                   | L'objet "associé" est passé ou défini en paramètre.                        | L'objet "contenu" est créé dans le constructeur ou initialisé directement dans l'objet "contenant". | L'objet agrégé est passé au contenant dans le constructeur, mais n'est pas créé directement dans la classe. |
+
+### Resumé des relations :
+
+| **Relation** | **Clé de relation**       | **Exemple**                 |
+| ------------ | ------------------------- | --------------------------- |
+| Héritage     | "est un" (is-a)           | Un chien est un animal.     |
+| Association  | "utilise/travaille avec"  | Un chien a un propriétaire. |
+| Composition  | "fait partie de"          | Un animal a un cœur.        |
+| Agrégation   | "a un", dépendance faible | Une école a des élèves.     |
 
 ![border](../assets/line/line-pink-point_r.png);
 

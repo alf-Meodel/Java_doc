@@ -14,7 +14,7 @@
 
 - [Exercices CodeWars](./doc/exercices_codewars.md)
 - [JAVA Cheat sheet](./doc/java_cheatsheet.md)
-- [Benchmark JAVA/NEST](./doc/benchmark.md)
+- [Benchmarks](./doc/benchmarks.md)
 - [Les differents types en JAVA](./doc/java_type.md)
 - [Les dailys](./doc/dailys.md)
 - [L'heritage](/doc/heritage.md)

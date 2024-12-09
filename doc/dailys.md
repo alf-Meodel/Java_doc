@@ -48,9 +48,9 @@
   - [x] Utilisation du mot clé super
   - [x] Fonctionnalités étendues entre un parent et un enfant
 - [x] Analyse du concept de polymorphisme
-  - [ ] Méthode commune
-  - [ ] Surcharge
-- Apprentissage des relations possibles entre les classes
+  - [x] Méthode commune
+  - [x] Surcharge
+- [ ] Apprentissage des relations possibles entre les classes
   - [ ] Association
   - [ ] Composition
 
