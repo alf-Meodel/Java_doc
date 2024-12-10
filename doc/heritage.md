@@ -21,6 +21,9 @@
     - [Utiliser les super](#utiliser-les-super)
     - [Override](#override)
     - [Ajouter une autre classe enfant cat](#ajouter-une-autre-classe-enfant-cat)
+  - [Abstraction & erreurs](#abstraction--erreurs)
+    - [Intégration des Classes Abstraites :](#intégration-des-classes-abstraites-)
+    - [Intégration des Interfaces :](#intégration-des-interfaces)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -271,27 +274,189 @@ public class Main {
 }
 ```
 
-### Difference entre heritage association composition agrégation :
+# Abstraction & erreurs
 
-| **Critère**            | **Héritage**                                                                       | **Association**                                                            | **Composition**                                                                                     | **Agrégation**                                                                                              |
-| ---------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **Relation**           | Relation "est un" (is-a)                                                           | Relation "utilise/travaille avec"                                          | Relation "fait partie de"                                                                           | Relation "a un" (has-a), mais avec moins de dépendance.                                                     |
-| **Dépendance**         | La classe enfant dépend de la classe parent et hérite de ses comportements.        | Les objets liés peuvent exister indépendamment.                            | L'objet "contenu" ne peut pas exister sans l'objet "contenant".                                     | Les objets liés peuvent exister indépendamment mais sont fortement associés pour une durée.                 |
-| **Durée de vie**       | La classe parent et la classe enfant ont des cycles de vie liés par la hiérarchie. | Les objets ont des cycles de vie indépendants.                             | L'objet "contenu" est détruit si l'objet "contenant" est détruit.                                   | L’objet agrégé peut survivre indépendamment, mais une relation forte existe pendant leur association.       |
-| **Représentation UML** | Représentée par une flèche simple pointant vers la classe parent.                  | Représentée par une ligne simple entre les deux classes.                   | Représentée par une ligne avec un losange rempli du côté du contenant.                              | Représentée par une ligne avec un losange vide du côté du contenant.                                        |
-| **Exemple pratique**   | Une `Dog` est un `Animal` et hérite des attributs/méthodes d’`Animal`.             | Un `Dog` peut avoir un `Owner`, mais l'`Owner` peut exister sans le `Dog`. | Un `Animal` possède un `Heart`, et le `Heart` n’a pas de sens sans l’`Animal`.                      | Une `School` a plusieurs `Students`, mais les `Students` peuvent exister sans la `School`.                  |
-| **Code typique**       | Utilisation du mot-clé `extends` pour définir une classe enfant.                   | L'objet "associé" est passé ou défini en paramètre.                        | L'objet "contenu" est créé dans le constructeur ou initialisé directement dans l'objet "contenant". | L'objet agrégé est passé au contenant dans le constructeur, mais n'est pas créé directement dans la classe. |
+### Intégration des Classes Abstraites :
 
-### Resumé des relations :
+- Nous allons transformer la classe **Animal** en classe abstraite pour la rendre plus générique et imposer de comportements communs à ses sous classes
 
-| **Relation** | **Clé de relation**       | **Exemple**                 |
-| ------------ | ------------------------- | --------------------------- |
-| Héritage     | "est un" (is-a)           | Un chien est un animal.     |
-| Association  | "utilise/travaille avec"  | Un chien a un propriétaire. |
-| Composition  | "fait partie de"          | Un animal a un cœur.        |
-| Agrégation   | "a un", dépendance faible | Une école a des élèves.     |
+- nous allons donc créer uen methode abstraite puis il ne faut pas oublier de **préciser** dans l'entête de noter classe que c'est une **methode abstraite**
 
-![border](../assets/line/line-pink-point_r.png);
+```
+abstract void makeSound();
+```
+
+- ainsi nous avons pour l'exemple suivant une methode abstraite et une methode contrète
+
+### Animal en classe abstract
+
+```java
+public abstract class Animal{
+    String name;
+    // Constructeur dan le quel nous allons prendre les attributs
+    // afin de les "lister"
+    public Animal(String name) {
+        this.name = name;
+    }
+    //Methode abstraite
+    abstract void makeSound();
+    //Methode concrète
+    void eat(){
+        System.out.println(name + " is eating");
+    }
+}
+```
+
+- Puis nous allons adapter le reste de notre code en fonction de notre **nouvelle abstraction** en utilisant activement **make sound**
+
+### Cat qui utilise une methode astract de la classe Animal
+
+```java
+public class Cat extends Animal{
+//Donc nous allons utiliser super
+    public Cat(String name){
+        super(name);
+    }
+//   void meow(){
+//  System.out.println( name = " is meowing");
+//}
+@Override
+    void makeSound(){
+    System.out.println(name + "is meowing");
+}
+}
+```
+
+- Nous allons aussi rajouter la classe abstraite que nous avons rajouté dans notre **classe parente**
+
+```
+ @Override
+    void makeSound() {
+        System.out.println(name + " is barking.");
+    }
+```
+
+- ce qui nosu donne :
+
+### Dog qui utilise une methode astract de la classe Animal
+
+```java
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name); // Appelle le constructeur de Animal
+    }
+
+    // OVERRIDE sur eat car ici Dog va manger differemment
+    // on récupère donc la methode du parent afin de CREER
+    // Une VERSION CUSTOM
+    // au sein de la classe ciblé ici DOG enfant de ANIMAL
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " is barking.");
+    }
+
+    @Override
+    void eat() {
+        // Appelle la méthode de Animal
+        super.eat();
+        System.out.println("Dog is eating noisily.");
+    }
+
+    void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+```
+
+# Intégration des Interfaces
+
+- Pour les comportements spécifiques, nous allons utiliser une interface.
+- Par exemple, certains (pas tous) animaux peuvent être joueurs ou nageurs.
+
+- Nous allons donc créer une Interface `Playable` de la manière suivante
+
+### Creation d'une interface Playable
+
+```java
+public interface Playable {
+void play();
+}
+```
+
+- Dans un premier temps nous allons rajouter dans l'entête de notre classe **chien**
+- Que nous **implémentons la classe abstraite** dans laquelle se trouve la methode **play**
+
+```java
+public class Dog extends Animal implements Playable {
+```
+
+- Puis allons utiliser la methode abstraite diretement dans le code sous la forme d'un **Override**
+
+```java
+ @Override
+    public void play() {
+        System.out.println(name + " is playing fetch.");
+    }
+```
+
+- Voici à quoi ressemble le code complet :
+
+### Dog implement la classe abstraite :
+
+```java
+public class Dog extends Animal implements Playable{
+    public Dog(String name) {
+        super(name); // Appelle le constructeur de Animal
+    }
+
+    // OVERRIDE sur eat car ici Dog va manger differemment
+    // on récupère donc la methode du parent afin de CREER
+    // Une VERSION CUSTOM
+    // au sein de la classe ciblé ici DOG enfant de ANIMAL
+
+    @Override
+    void makeSound() {
+        System.out.println(name + " is barking.");
+    }
+
+    //void bark() {
+    //  System.out.println(name + " is barking.");
+    // }
+
+    @Override
+    void eat() {
+        // Appelle la méthode de Animal
+        super.eat();
+        System.out.println("Dog is eating noisily.");
+    }
+
+    @Override
+    public void play() {
+        System.out.println(name + " is playing fetch.");
+    }
+}
+```
+
+### Cat implement la classe abstraite :
+
+```java
+public class Cat extends Animal implements Playable {
+    public Cat(String name) {
+        super(name);
+    }
+    @Override
+    void makeSound() {
+        System.out.println(name + " is meowing.");
+    }
+    @Override
+    public void play() {
+        System.out.println(name + " is playing with a ball of yarn.");
+    }
+}
+```
+
+![border](../assets/line/line-pink-point_r.png)
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
