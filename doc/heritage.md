@@ -24,6 +24,9 @@
   - [Abstraction & erreurs](#abstraction--erreurs)
     - [Intégration des Classes Abstraites :](#intégration-des-classes-abstraites-)
     - [Intégration des Interfaces :](#intégration-des-interfaces)
+    - [Creation d'une interface Playable](#creation-dune-interface-playable)
+    - [Dog implement la classe abstraite Playable:](#dog-implement-la-classe-abstraite-playable)
+    - [Cat implement la classe abstraite Playable :](#cat-implement-la-classe-abstraite-playable-)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -376,7 +379,7 @@ public class Dog extends Animal {
 
 - Nous allons donc créer une Interface `Playable` de la manière suivante
 
-### Creation d'une interface Playable
+## Creation d'une interface Playable
 
 ```java
 public interface Playable {
@@ -402,7 +405,7 @@ public class Dog extends Animal implements Playable {
 
 - Voici à quoi ressemble le code complet :
 
-### Dog implement la classe abstraite :
+## Dog implement la classe abstraite Playable:
 
 ```java
 public class Dog extends Animal implements Playable{
@@ -438,22 +441,103 @@ public class Dog extends Animal implements Playable{
 }
 ```
 
-### Cat implement la classe abstraite :
+## Cat implement la classe abstraite Playable :
 
 ```java
-public class Cat extends Animal implements Playable {
-    public Cat(String name) {
+public class Cat extends Animal implements Playable{
+    //Donc nous allons utiliser super
+    public Cat(String name){
         super(name);
     }
-    @Override
-    void makeSound() {
-        System.out.println(name + " is meowing.");
+//  void meow(){
+//  System.out.println( name = " is meowing");
+//  }
+@Override
+    void makeSound(){
+    System.out.println(name + "is meowing");
+}
+@Override
+    public void play(){
+    System.out.println(name + " joue avec une pelotte de laine ");
+}
+}
+```
+
+## Owner : Exploiter Interfaces et Héritage pour Accéder à des Attributs Parent
+
+###### Résumé du Cours
+
+- **Interfaces :** Le paramètre de la méthode est de type Playable, ce qui montre que la méthode repose sur une interface pour définir un comportement abstrait (play()).
+- **Héritage :** La méthode utilise un cast explicite pour accéder à l'attribut name défini dans la classe parente Animal, qui n'est pas directement accessible via l'interface Playable.
+- **Interaction dynamique :** La méthode démontre comment combiner ces deux mécanismes pour permettre des interactions complexes entre des objets partageant un comportement commun (via une interface) mais ayant des caractéristiques spécifiques héritées d'une classe parente.
+
+Ajoute la possibilité de jouer avec les animaux en utilisant **l'interface Playable.**
+
+```java
+public class Owner {
+String name;
+
+// Constructeur de Owner
+
+    public Owner(String name){
+       this.name = name;
     }
-    @Override
-    public void play() {
-        System.out.println(name + " is playing with a ball of yarn.");
+
+    public void feed (Animal animal){
+        System.out.println(name + " is feeding" + animal.name);
+    }
+
+    public void playWith (Playable animal){
+        System.out.println(name + " is playing with " + ((Animal) animal).name);
+        animal.play();
     }
 }
+```
+
+```
+Cette partie indique que l'objet animal doit être traité comme un objet de type Animal,
+même s'il peut être une instance d'une sous-classe comme Dog ou Cat.
+```
+
+### .name :
+
+```
+Une fois que l'objet est considéré comme un Animal,
+tu peux accéder aux attributs ou méthodes qui appartiennent
+à la classe Animal (dans ce cas, l'attribut name).
+```
+
+## Explications :
+
+##### Fonctionnement de playWith en quelques étapes :
+
+###### Paramètre de la méthode :
+
+```java
+public void playWith (Playable animal){
+        System.out.println(name + " is playing with " + ((Animal) animal).name);
+        animal.play();
+    }
+```
+
+- La méthode prend un paramètre animal de type Playable.
+- Cela signifie que n'importe quel objet qui implémente l'interface Playable peut être passé à cette méthode.
+
+##### Conversion explicite avec (Animal):
+
+**((Animal) animal) : On "convertit" (ou cast) l'objet animal en type Animal.**
+Cela permet d'accéder à des propriétés ou méthodes de la classe Animal qui ne font pas partie de l'interface Playable.
+
+##### Accès à name:
+
+**Une fois que l'objet est considéré comme un Animal,** on peut accéder à l'attribut name de la classe Animal via ((Animal) animal).name.
+
+##### Appel à animal.play():
+
+La méthode play() est appelée directement sur le paramètre animal, car cette méthode est définie dans l'interface Playable.
+
+```
+
 ```
 
 ![border](../assets/line/line-pink-point_r.png)
