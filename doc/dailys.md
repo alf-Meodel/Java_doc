@@ -10,7 +10,9 @@
 
 ## Sommaire
 
-- [Introduction](#introduction)
+- [Introduction à java à la POO](#introduction-à-java-et-à-la-poo)
+- [Programmation Orientée Objet - Concepts avancés](#programmation-orientée-objet---concepts-avancés)
+- [Introduction à java à la POO](#introduction-à-java-et-à-la-poo)
 
 ![border](../assets/line/border_deco_rb.png)
 
@@ -50,9 +52,26 @@
 - [x] Analyse du concept de polymorphisme
   - [x] Méthode commune
   - [x] Surcharge
-- [ ] Apprentissage des relations possibles entre les classes
-  - [ ] Association
-  - [ ] Composition
+- [x] Apprentissage des relations possibles entre les classes
+  - [x] Association
+  - [x] Composition
+
+## Mardi 10/12/2024 :
+
+### Programmation Orientée Objet - Abstraction et erreurs
+
+- [x] Découverte de l'Abstraction
+  - [ ] Bilan sur l'héritage
+  - [ ] Notion de classes abstraites
+  - [ ] Notion d'interface
+- [ ] Gestion des erreurs
+  - [ ] Utilisation des exceptions
+  - [ ] Mot clé finally
+  - [ ] Propagation des exceptions
+  - [ ] Création d'exceptions personnalisées
+- [ ] Initiation aux bonnes pratiques
+  - [ ] Découverte du principe SOLID
+- [ ] Exercices pratiques
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
