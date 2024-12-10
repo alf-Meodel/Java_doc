@@ -523,7 +523,7 @@ public void playWith (Playable animal){
 - La méthode prend un paramètre animal de type Playable.
 - Cela signifie que n'importe quel objet qui implémente l'interface Playable peut être passé à cette méthode.
 
-##### Conversion explicite avec (Animal):
+## Conversion explicite avec (Animal) :
 
 **((Animal) animal) : On "convertit" (ou cast) l'objet animal en type Animal.**
 Cela permet d'accéder à des propriétés ou méthodes de la classe Animal qui ne font pas partie de l'interface Playable.
