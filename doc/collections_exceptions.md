@@ -8,19 +8,23 @@
 
 ![border](../assets/line/line-pink-point_l.png)
 
+```
+ Lever une exception signifie signaler qu’un problème est survenu pendant l’exécution du programme
+```
+
 ## Missions
 
 - [ ] [Découvrir les Collections Java]()
 
   - [ ] [List (ArrayList, LinkedList)](#les-collections-list-arraylist-linkedlist)
   - [ ] [Set (HashSet, TreeSet)](#set-hashset-treeset)
-  - [ ] Map (HashMap, TreeMap)
-  - [ ] Utilisation des Generics
+  - [ ] [Map (HashMap, TreeMap)](#map-hashmap-treemap)
+  - [ ] [Utilisation des Generics](#utilisation-des-generics)
 
 - [ ] [Gérer les exceptions](#gérer-les-exceptions)
 
-  - [ ] Utilisation de try-catch-finally
-  - [ ] Propagation des exceptions avec throws
+  - [ ] [Utilisation de try-catch-finally](#utilisation-de-try-catch-finally)
+  - [ ] [Propagation des exceptions avec throws](#propagation-des-exceptions-avec-throws)
   - [ ] Création d'exceptions personnalisées
 
 - [ ] Exercices pratiques
@@ -44,6 +48,8 @@ public class Main {
 }
 ```
 
+![border](../assets/line/line-teal-point_l.png)
+
 ## Les Collections List (ArrayList, LinkedList)
 
 ### Définition :
@@ -54,11 +60,15 @@ public class Main {
 
 ### Benchmark ARRAYLIST LINKEDLIST:
 
+---
+
 | Type de Tableau/Collection | Structure de Données     | Consommation Mémoire | Cas d'utilisation                             |
 | -------------------------- | ------------------------ | -------------------- | --------------------------------------------- |
 | Array (Tableau simple)     | Tableau statique         | Faible               | Manipulations simples avec taille fixe        |
 | ArrayList                  | Tableau dynamique        | Modérée              | Listes dynamiques avec accès rapide par index |
 | LinkedList                 | Liste doublement chaînée | Élevée               | Listes avec ajouts/suppressions fréquents     |
+
+---
 
 ## Creation de notre premier tableau dynamique :
 
@@ -89,6 +99,8 @@ public class Main {
 [Apple, Banana]
 ```
 
+![border](../assets/line/line-teal-point_l.png)
+
 ## Set (HashSet, TreeSet)
 
 ### Definiton
@@ -99,10 +111,14 @@ public class Main {
 
 ### BENCHMARK HASHSET TREESET
 
+---
+
 | Type de Set | Structure de Données    | Ordre des Éléments            | Performances                                 | Consommation Mémoire | Cas d'utilisation                             |
 | ----------- | ----------------------- | ----------------------------- | -------------------------------------------- | -------------------- | --------------------------------------------- |
 | HashSet     | Table de hachage        | Aucun                         | Rapide pour `add` et `contains` (O(1))       | Modérée              | Stockage rapide d'éléments uniques sans ordre |
 | TreeSet     | Arbre binaire équilibré | Ordre naturel ou personnalisé | Moins rapide, `add` et `contains` (O(log n)) | Élevée               | Stockage ordonné d'éléments uniques           |
+
+---
 
 ```java
 package org.example;
@@ -120,6 +136,8 @@ public class Main {
     }
 }
 ```
+
+![border](../assets/line/line-teal-point_l.png)
 
 ## Map (HashMap, TreeMap)
 
@@ -200,6 +218,8 @@ names.add(42); // Pas d'erreur ici !
 String name = (String) names.get(1); // Erreur à l'exécution
 ```
 
+![border](../assets/line/line-teal-point_l.png)
+
 # Gérer les Exceptions
 
 ## Utilisation de try-catch-finally
@@ -236,6 +256,8 @@ public class Main {
 }
 ```
 
+![border](../assets/line/line-teal-point_l.png)
+
 ## Ce qui se passe
 
 ### Bloc try :
@@ -265,6 +287,47 @@ public class Main {
 - **NullPointerException** : Levée lorsque tu tentes d’accéder à un objet qui est null.
 - **IOException** : Utilisée pour les erreurs d’entrée/sortie (lecture/écriture de fichiers, flux, etc.).
 - **ArrayIndexOutOfBoundsException** : Levée lorsque tu accèdes à un index invalide dans un tableau.
+
+![border](../assets/line/line-teal-point_l.png)
+
+## Propagation des exceptions avec throws
+
+### Définition :
+
+Permet à une méthode de propager une exception à son appelant en utilisant le mot-clé throws.
+
+```java
+package org.example;
+import java.nio.file.*;
+import java.nio.file.*;    // Import des classes nécessaires pour manipuler des fichiers et chemins
+public class Main {
+    public static void main(String[] args) {
+        try {
+            // Appelle une méthode qui est enveloppé dans le try
+            // pour réagir si une erreur se produit on lui
+            // ACCORDE UN THROW
+            // pour indiquer qu'elle peut LEVER UNE EXCEPTION
+            // qui se déclenche si une anomalie est detectée
+            // Si une erreur est avéré nuisant au bon focntionnement de la methode
+            // alors le message de l'erreur correspondant
+            // au type d'exception ici ArithmeticException
+            // et envoyé dans le catch
+            // qui va récupérer le message d'erreur correspondant
+            divide(10, 0);
+        } catch (ArithmeticException e) {
+            // Capture et affiche le message de l'exception
+            System.out.println("Erreur capturée : " + e.getMessage());
+        }
+    }
+
+    // Méthode qui effectue une division et peut lever une exception
+    static void divide(int a, int b) throws ArithmeticException {
+        // Si 'b' est 0, une exception sera levée
+        int result = a / b;
+        System.out.println("Résultat : " + result);
+    }
+}
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 
