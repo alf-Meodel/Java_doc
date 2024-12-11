@@ -21,7 +21,7 @@
 # Dailys
 
 - [L'heritage](/doc/heritage.md)
-- [Abstraction et erreurs](/doc/abstraction_erreurs.md)
+- [Abstraction et erreurs](./doc/abstraction_erreurs.md)
 
 ![border](./assets/line/border_deco_rb.png)
 
