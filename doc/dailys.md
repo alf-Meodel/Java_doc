@@ -61,17 +61,38 @@
 ### Programmation Orientée Objet - Abstraction et erreurs
 
 - [x] Découverte de l'Abstraction
-  - [ ] Bilan sur l'héritage
-  - [ ] Notion de classes abstraites
-  - [ ] Notion d'interface
-- [ ] Gestion des erreurs
-  - [ ] Utilisation des exceptions
-  - [ ] Mot clé finally
-  - [ ] Propagation des exceptions
+  - [x] Bilan sur l'héritage
+  - [x] Notion de classes abstraites
+  - [x] Notion d'interface
+- [x] Gestion des erreurs
+  - [x] Utilisation des exceptions
+  - [x] Mot clé finally
+  - [x] Propagation des exceptions
+  - [x] Création d'exceptions personnalisées
+- [x] Initiation aux bonnes pratiques
+  - [x] Découverte du principe SOLID
+- [x] Exercices pratiques
+
+## Mercredi 11/12/2024 :
+
+### Java - Collections et Gestion des Exceptions
+
+- [ ] Découvrir les Collections Java
+
+  - [ ] List (ArrayList, LinkedList)
+  - [ ] Set (HashSet, TreeSet)
+  - [ ] Map (HashMap, TreeMap)
+  - [ ] Utilisation des Generics
+
+- [ ] Gérer les exceptions
+
+  - [ ] Utilisation de try-catch-finally
+  - [ ] Propagation des exceptions avec throws
   - [ ] Création d'exceptions personnalisées
-- [ ] Initiation aux bonnes pratiques
-  - [ ] Découverte du principe SOLID
+
 - [ ] Exercices pratiques
+  - [ ] Manipuler une liste d'objets (ajouter, supprimer, trier)
+  - [ ] Écrire un programme qui gère les exceptions lors de la lecture d'un fichier
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">
