@@ -17,7 +17,7 @@
   - [ ] Map (HashMap, TreeMap)
   - [ ] Utilisation des Generics
 
-- [ ] Gérer les exceptions
+- [ ] [Gérer les exceptions](#gérer-les-exceptions)
 
   - [ ] Utilisation de try-catch-finally
   - [ ] Propagation des exceptions avec throws
@@ -199,6 +199,72 @@ names.add("Alice");
 names.add(42); // Pas d'erreur ici !
 String name = (String) names.get(1); // Erreur à l'exécution
 ```
+
+# Gérer les Exceptions
+
+## Utilisation de try-catch-finally
+
+### Définition :
+
+- Gérer les exceptions en **encapsulant le code susceptible d’échouer dans un bloc try**,
+- traiter les erreurs dans un catch, **et exécuter du code dans finally si nécessaire.**
+
+```java
+package org.example;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // le Bloc try :
+        // le code susceptible de générer une exception est placé ici
+        try {
+            // Une division par zéro est tentée ici ( qui pose evidemment problème)
+            int result = 10 / 0;
+        }
+        // Bloc catch : il intercepte l'exception si elle survient
+        catch (ArithmeticException e) {
+            // e.getMessage() est une méthode de la classe Throwable
+            // Elle renvoie un message descriptif de l'exception déclenchée.
+            // Dans ce cas, elle retourne : "/ by zero" (erreur spécifique à la division par zéro).
+            System.out.println("Erreur : " + e.getMessage());
+        }
+        // Bloc finally : ce code s'exécute toujours, qu'une exception ait été levée ou non.
+        finally {
+            System.out.println("Fin du traitement.");
+        }
+    }
+}
+```
+
+## Ce qui se passe
+
+### Bloc try :
+
+- Le code dans ce bloc tente de diviser 10 par 0.
+- En Java, une division par zéro pour des entiers **déclenche une exception de type ArithmeticException.**
+
+### Bloc catch :
+
+- Quand l'exception est levée, **le programme saute directement au bloc catch.**
+- L'objet **e** est une **instance de ArithmeticException** qui contient des informations sur l'erreur.
+
+### e.getMessage() :
+
+- C'est une méthode héritée de la classe Throwable (la classe parent de toutes les exceptions en Java).
+- Elle retourne un message descriptif de l'exception. Dans ce cas précis, elle renverra la chaîne : "/ by zero".
+- Cela permet de comprendre la nature exacte de l'erreur.
+
+### Bloc finally :
+
+- Ce bloc est exécuté dans tous les cas, que l'exception ait été levée ou non.
+- Il est souvent utilisé pour des opérations de nettoyage (comme fermer un fichier ou libérer des ressources).
+
+## D'autres types d'exceptions :
+
+- **ArithmeticException** : Utilisée pour les erreurs mathématiques, comme une division par zéro.
+- **NullPointerException** : Levée lorsque tu tentes d’accéder à un objet qui est null.
+- **IOException** : Utilisée pour les erreurs d’entrée/sortie (lecture/écriture de fichiers, flux, etc.).
+- **ArrayIndexOutOfBoundsException** : Levée lorsque tu accèdes à un index invalide dans un tableau.
 
 ![border](../assets/line/line-pink-point_r.png)
 
