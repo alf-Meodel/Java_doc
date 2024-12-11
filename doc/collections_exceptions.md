@@ -25,7 +25,7 @@
 
   - [ ] [Utilisation de try-catch-finally](#utilisation-de-try-catch-finally)
   - [ ] [Propagation des exceptions avec throws](#propagation-des-exceptions-avec-throws)
-  - [ ] Création d'exceptions personnalisées
+  - [ ] [Création d'exceptions personnalisées](#création-dexceptions-personnalisées)
 
 - [ ] Exercices pratiques
   - [ ] Manipuler une liste d'objets (ajouter, supprimer, trier)
@@ -362,22 +362,25 @@ public class Main {
 }
 ```
 
-Explication :
-Créer une exception personnalisée :
+## Detail de l'exception
 
-La classe MyException hérite de la classe Exception.
-Elle utilise un constructeur pour transmettre un message d'erreur personnalisé à la classe parent via super(message).
-Lever l'exception :
+- La classe MyException hérite de la classe Exception. -** Elle utilise un constructeur** pour transmettre
+- un message d'erreur personnalisé à la classe parent
+- via **super(message)**.
 
-Dans le bloc try, on utilise throw new MyException(...) pour signaler une erreur spécifique.
-Attraper et gérer l'exception :
+### Lever l'exception :
 
-Le bloc catch intercepte l'exception de type MyException et affiche son message grâce à e.getMessage().
-Résultat attendu :
-Lorsque tu exécutes ce code, voici la sortie console :
+- Dans le bloc try, on utilise throw new MyException(...) pour signaler une erreur spécifique.
 
-Copier le code
+### Attraper et gérer l'exception :
+
+- Le bloc catch intercepte l'exception de type MyException et affiche son message grâce à **e.getMessage().**
+
+### Résultat attendu :
+
+```
 Erreur capturée : Ceci est une erreur personnalisée !
+```
 
 ![border](../assets/line/line-pink-point_r.png)
 
