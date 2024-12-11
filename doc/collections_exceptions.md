@@ -329,6 +329,56 @@ public class Main {
 }
 ```
 
+![border](../assets/line/line-teal-point_r.png)
+
+## Création d'exceptions personnalisées
+
+### Définition :
+
+Permet de créer des exceptions spécifiques en héritant de Exception ou **RuntimeException**.
+
+```java
+package org.example;
+import java.nio.file.*;
+import java.nio.file.*;    // Import des classes nécessaires pour manipuler des fichiers et chemins
+// Création d'une exception personnalisée
+class MyException extends Exception {
+    // Constructeur qui prend un message d'erreur
+    public MyException(String message) {
+        super(message); // Appelle le constructeur de la classe parent (Exception)
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            // Lève une exception personnalisée avec un message
+            throw new MyException("Ceci est une erreur personnalisée !");
+        } catch (MyException e) {
+            // Capture et affiche le message de l'exception
+            System.out.println("Erreur capturée : " + e.getMessage());
+        }
+    }
+}
+```
+
+Explication :
+Créer une exception personnalisée :
+
+La classe MyException hérite de la classe Exception.
+Elle utilise un constructeur pour transmettre un message d'erreur personnalisé à la classe parent via super(message).
+Lever l'exception :
+
+Dans le bloc try, on utilise throw new MyException(...) pour signaler une erreur spécifique.
+Attraper et gérer l'exception :
+
+Le bloc catch intercepte l'exception de type MyException et affiche son message grâce à e.getMessage().
+Résultat attendu :
+Lorsque tu exécutes ce code, voici la sortie console :
+
+Copier le code
+Erreur capturée : Ceci est une erreur personnalisée !
+
 ![border](../assets/line/line-pink-point_r.png)
 
 <a href="#missions">
