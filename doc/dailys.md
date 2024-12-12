@@ -70,29 +70,63 @@
   - [x] Propagation des exceptions
   - [x] Création d'exceptions personnalisées
 - [x] Initiation aux bonnes pratiques
-  - [x] Découverte du principe SOLID
-- [x] Exercices pratiques
+  - [ ] Découverte du principe SOLID
+- [ ] Exercices pratiques
 
 ## Mercredi 11/12/2024 :
 
 ### Java - Collections et Gestion des Exceptions
 
-- [ ] Découvrir les Collections Java
+- [x] Découvrir les Collections Java
 
-  - [ ] List (ArrayList, LinkedList)
-  - [ ] Set (HashSet, TreeSet)
-  - [ ] Map (HashMap, TreeMap)
-  - [ ] Utilisation des Generics
+  - [x] List (ArrayList, LinkedList)
+  - [x] Set (HashSet, TreeSet)
+  - [x] Map (HashMap, TreeMap)
+  - [x] Utilisation des Generics
 
-- [ ] Gérer les exceptions
+- [x] Gérer les exceptions
 
-  - [ ] Utilisation de try-catch-finally
-  - [ ] Propagation des exceptions avec throws
-  - [ ] Création d'exceptions personnalisées
+  - [x] Utilisation de try-catch-finally
+  - [x] Propagation des exceptions avec throws
+  - [x] Création d'exceptions personnalisées
 
-- [ ] Exercices pratiques
-  - [ ] Manipuler une liste d'objets (ajouter, supprimer, trier)
-  - [ ] Écrire un programme qui gère les exceptions lors de la lecture d'un fichier
+- [x] Exercices pratiques
+  - [x] Manipuler une liste d'objets (ajouter, supprimer, trier)
+  - [x] Écrire un programme qui gère les exceptions lors de la lecture d'un fichier
+
+## Jeudi 12/12/2024 :
+
+### UML - Découverte et diagramme de cas d'utilisation
+
+- [x] Découverte de l'UML
+
+  - [ ] Comprendre la signification de l'UML
+  - [ ] Comprendre les origines de l'UML. Pour a-t-il été créé ? (pour quels besoins)
+  - [ ] Quels sont les objectifs d'utiliser UML ?
+  - [ ] Comparaison avec la méthode MERISE ?
+  - [ ] Avantages / Inconvénients
+
+- [ ] Découverte des Diagrammes
+
+  - [ ] Lister les types de diagrammes existants
+  - [ ] Lister les diagrammes existants
+  - [ ] Comprendre l'intérêt de chacun des diagrammes
+  - [ ] Etudier les interactions existantes entre chacun des Diagrammes
+
+- [ ] Découverte des outils
+  - [ ] Trouver des outils type clients lourds
+  - [ ] Trouver des outils cloud
+- [ ] Initiation au diagramme de cas d'utilisation
+  - [ ] Comprendre les objectifs (d'un point de vue client / d'un point de vue développeur)
+  - [ ] Comment représenter un système d'information complet
+  - [ ] Etudier les concepts clés du diagramme de cas d'utilisation
+    - [ ] les acteurs
+  - [ ] les cas d'utilisation
+  - [ ] le système
+  - [ ] Comprendre le lien entre les User Stories et les cas d'utilisation
+- [ ] Cas pratique
+  - [ ] Réaliser une carte mentale des diagrammes
+  - [ ] Réaliser le diagramme de cas d'utilisation d'un DAB
 
 <a href="#sommaire">
   <img src="../assets/button/back_to_top.png" alt="Back to top" style="width: 150px; height: auto;">

@@ -12,6 +12,11 @@
  Lever une exception signifie signaler qu’un problème est survenu pendant l’exécution du programme
 ```
 
+```
+List c'est une liste ordonné on liste totu à la suite
+Set c'est un gros SAC
+```
+
 ## Missions
 
 - [ ] [Découvrir les Collections Java]()
