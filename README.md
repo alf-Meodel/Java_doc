@@ -22,6 +22,8 @@
 
 - [L'heritage](/doc/heritage.md)
 - [Abstraction et erreurs](./doc/abstraction_erreurs.md)
+- [Collections Exceptions](./doc/collections_exceptions.md)
+- [Diagrammes UML](./doc/diagramme_uml.md)
 
 ![border](./assets/line/border_deco_rb.png)
 
